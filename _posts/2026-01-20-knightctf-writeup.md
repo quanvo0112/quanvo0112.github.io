@@ -7,7 +7,7 @@ tags: [networking, pcap]
 
 # Reconnaissance
 
-**Category:** Network Forensics
+**Category:** Network Forensics  
 **File:** `pcap1.pcapng`
 
 ### 1. Phân tích đề bài
