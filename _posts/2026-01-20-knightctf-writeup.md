@@ -5,7 +5,7 @@ categories: [Security, CTF]
 tags: [networking, pcap]
 ---
 
-# Reconnaissance
+## Reconnaissance
 
 **Category:** Network Forensics  
 **File:** `pcap1.pcapng`
@@ -53,7 +53,7 @@ Tổng số cổng mở tìm thấy là: **2**.
 KCTF{2}
 ```
 
-# Gateway Identification
+## Gateway Identification
 **File:** `pcap1.pcapng`
 
 ### 1. Phân tích đề bài
@@ -91,7 +91,7 @@ Kẻ tấn công hoặc người dùng đang sử dụng Router của hãng Neti
 KCTF{Netis}
 ```
 
-# Exploitation
+## Exploitation
 **File:** `pcap2.pcapng`
 
 ### 1. Phân tích đề bài
@@ -158,7 +158,7 @@ Dưới đây là bản **Write-up (WU)** chi tiết và chuyên nghiệp cho b�
 
 ---
 
-# Vulnerability Exploitation
+## Vulnerability Exploitation
 **File:** `pcap2.pcapng`
 
 ### 1. Phân tích đề bài
@@ -217,7 +217,7 @@ Dưới đây là bài **Write-up (WU)** hoàn chỉnh và chi tiết cho thử 
 
 ---
 
-# Post-Exploitation
+## Post-Exploitation
 **File:** `pcap3.pcapng`
 
 ### 1. Phân tích đề bài
@@ -277,7 +277,7 @@ Dưới đây là bản **Write-up (WU)** hoàn chỉnh cho thử thách cuối 
 
 ---
 
-# Database Credentials Theft
+## Database Credentials Theft
 **File:** `pcap3.pcapng`
 
 ### 1. Phân tích đề bài
