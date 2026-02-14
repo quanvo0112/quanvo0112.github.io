@@ -2,7 +2,7 @@
 title: KnightCTF 2026
 date: 2026-01-20 15:30:00 +0700
 categories: [Security, CTF]
-tags: [networking, pcap]
+tags: [writeup, networking, pcap]
 ---
 
 ## Reconnaissance
