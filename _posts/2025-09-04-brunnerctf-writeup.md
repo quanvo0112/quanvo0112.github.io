@@ -5,8 +5,8 @@ categories: [Security, CTF]
 tags: [writeup, steganography, crypto, osint, web-security, python, lfi, command-injection, minecraft]
 ---
 
-# Shake & Bake
-## Join the Discord!
+## Shake & Bake
+### Join the Discord!
 - **Độ khó:** Intro
 - **Tác giả:** BrunnerCTF
 - **Mô tả:**  
@@ -20,7 +20,7 @@ tags: [writeup, steganography, crypto, osint, web-security, python, lfi, command
 - **Flag:** `brunner{1t5_4_P13C3_0f_c4K3_T0_B4k3_4_pr3TTy_C4k3!}`
 
 ---
-## TheBakingCase/Misc-Steganography
+### TheBakingCase/Misc-Steganography
 - **Độ khó:** Beginner
 - **Tác giả:** H4N5
 - **Mô tả:**  
@@ -52,7 +52,7 @@ print(f"The hidden message is: {hidden_message}")
 
 - **Flag:** `brunner{I_like_Baking_More_That_Programming}`
 
-## BasedBrunner/Misc
+### BasedBrunner/Misc
 - **Độ khó:** Beginner
 - **Tác giả:** Nissen
 - **Mô tả:**  
@@ -79,7 +79,7 @@ print(text)
 
 - **Flag:** `brunner{1s_b4s3d}`
 
-## Whisk/Crypto
+### Whisk/Crypto
 - **Độ khó:** Beginner
 - **Tác giả:** rvsms
 - **Mô tả:**  
@@ -125,8 +125,8 @@ print("\n" + "="*25 + "\n")
 
 ---
 
-# Misc
-## The Yeast Key
+## Misc
+### The Yeast Key
 - **Độ khó:** Easy
 - **Tác giả:** H4N5
 - **Mô tả:**  
@@ -171,7 +171,7 @@ except Exception as e:
 `brunner{1i0n3l_p0i14n3_m4573r_0f_50urd0u6h_p455phr453_15_cr01554n7V4u17!93}`
 
 ---
-## Pie Recipe
+### Pie Recipe
 - **Độ khó:** Easy
 - **Tác giả:** H4N5
 - **Mô tả:**  
@@ -210,7 +210,7 @@ if __name__ == "__main__":
 
 ---
 
-## Cake Vault
+### Cake Vault
 - **Độ khó:** Medium
 - **Tác giả:** OddNorseman
 - **Mô tả:**  
@@ -239,8 +239,8 @@ if __name__ == "__main__":
 
 ---
 
-# OSINT
-## There Is a Lovely Land
+## OSINT
+### There Is a Lovely Land
 - **Độ khó:** Easy
 - **Tác giả:** Toxicd
 - **Mô tả:**
@@ -256,7 +256,7 @@ A friend of mine took this picture, but I don't know the name of the bridge! Ple
 - **Flag:** `brunner{sallingsundbroen}`
 
 ---
-## Train Mania
+### Train Mania
 - **Độ khó:** Easy
 - **Tác giả:** Quack
 - **Mô tả:**
@@ -274,8 +274,8 @@ So if the operator you have found is DSB, the model number RB1, and the maximum 
 
 ---
 
-# Web
-## Brunsviger Huset
+## Web
+### Brunsviger Huset
 - **Độ khó:** Easy-Medium
 - **Tác giả:** ha1fdan
 - **Mô tả:**
@@ -310,7 +310,7 @@ https://brunsviger-huset-9fca8e5675be40db.challs.brunnerne.xyz/print.php?file=ph
 - **Flag:** `brunner{l0c4l_f1l3_1nclus10n_1n_th3_b4k3ry}`
 
 ---
-## Baking Bad
+### Baking Bad
 - **Độ khó:** 
 - **Tác giả:** 0xjeppe
 - **Mô tả:**
