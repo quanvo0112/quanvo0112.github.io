@@ -12,9 +12,11 @@ tags: [writeup, steganography, crypto, osint, web-security, python, lfi, command
 - **Mô tả:**  
 ![](/assets/img/BrunnerCTF2025/join-the-discord.png)
 - **Cách giải:**  
+
 1. Nhấn vào link discord trên phần mô tả của challenge.
 2. Trong mô tả có đề cập phần announcements (thông báo), do đó nhấn vào announcements.
 3. Kiểm tra phần thông báo khai mạc cuộc thi thì thấy tin nhắn ẩn (hidden), click vào để hiện thì thu được flag.
+
 - **Flag:** `brunner{1t5_4_P13C3_0f_c4K3_T0_B4k3_4_pr3TTy_C4k3!}`
 
 ---
@@ -83,6 +85,7 @@ print(text)
 - **Mô tả:**  
 ![](/assets/img/BrunnerCTF2025/whisk.png)
 - **Cách giải:**  
+
 ```python  
 ciphertext = """
 DR🥐 C🥐TZ🥐D 🧁SXZ🥐A🧁🥐SD 🧁C 🍰KE🍰FC K🍩M🥐. D🍩 O🍰Q🥐 🍰 Y🥐ZP🥐TD
@@ -129,6 +132,7 @@ print("\n" + "="*25 + "\n")
 - **Mô tả:**  
 ![](/assets/img/BrunnerCTF2025/the-yeast-key.png)
 - **Cách giải:**  
+
 ```python  
 import base64
 
@@ -173,6 +177,7 @@ except Exception as e:
 - **Mô tả:**  
 ![](/assets/img/BrunnerCTF2025/pie-recipe.png)  
 - **Cách giải:**  
+
 ```python  
 import base64
 
@@ -211,6 +216,7 @@ if __name__ == "__main__":
 - **Mô tả:**  
 ![](/assets/img/BrunnerCTF2025/cake-vault.png)
 - **Cách giải:**  
+
 1. Tải file zip từ thử thách về, khá bất ngờ đó là một file map của game Minecraft
 2. Khá may mắn là có game Minecraft trong máy, sau đó copy file map được cho vào thư mục `/saves` từ thư mục của game.
 3. Tôi có thử tạm một phiên bản 1.21.4 để kiểm tra rằng map được tạo ra từ phiên bản nào thì phát hiện map được tạo ra ở phiên bản 1.21.8.
@@ -279,6 +285,7 @@ Welcome to "Brunsviger Huset" (House of Brunsviger), the oldest Danish bakery in
 Can you find the hidden flag that's been baked into our website? Be warned, our bakers are notorious for their clever hiding spots!
 
 - **Cách giải:**
+
 Kiểm tra trang web thông qua curl
 ```
 curl https://brunsviger-huset-9fca8e5675be40db.challs.brunnerne.xyz/
@@ -315,6 +322,7 @@ Our bakers have been trying to come up with a new P2P-recipe trying all sorts of
 Luckily, the developers at Brunnerne have come up with a bash -c 'recipe' that can simulate the baking process.
 This way we can test ingredients in a simulator to find ingredients that result in a higher purity - without wasting any ressources.
 - **Cách giải:**
+
 Tôi thử injection một tí, kết quả khá là oke 
 ![](/assets/img/BrunnerCTF2025/baking-bad-1.png)
 Sau đó tôi có mò thêm các command injection có sẵn trên mạng thì kết quả đã có
