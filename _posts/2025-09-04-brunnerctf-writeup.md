@@ -29,22 +29,22 @@ puzzle_text = """
 i UseD to coDE liKe A sLEEp-dEprIVed SqUirRel smasHInG keYs HOPinG BugS would dISApPear THrOugh fEAr tHeN i sPilled cOFfeE On mY LaPTop sCReameD iNTerNALly And bakeD BanaNa bREAd oUt oF PAnIc TuRNs OUT doUGh IS EasIEr tO dEbUG ThaN jaVASCrIPt Now I whIsPeR SWEEt NOtHIngs TO sOurDoUGh StARtERs aNd ThReATEN CrOissaNts IF they DoN'T rIsE My OVeN haS fEWeR CRasHEs tHAN mY oLD DEV sErvER aNd WHeN THInGS BurN i jUSt cAlL iT cARAMElIzEd FeatUReS no moRE meetInGS ThAt coUlD HAVE bEeN emailS JUst MufFInS THAt COulD HAvE BEen CupCAkes i OnCE tRIeD tO GiT PuSh MY cInnAmON rOLLs aND paNICkED WHEn I coUldn't reVErt ThEm NOw i liVe IN PeaCE uNLESs tHe yEast getS IDeas abOVe iTs StATion oR a COOkiE TrIES To sEgfAult my toOTH FILlings
 """
 
-binary_string = ""
-for char in puzzle_text:
-    if char.isalpha():
-        if char.islower():
-            binary_string += "0"
-        elif char.isupper():
-            binary_string += "1"
+binary_string = ""  
+for char in puzzle_text:  
+    if char.isalpha():  
+        if char.islower():  
+            binary_string += "0"  
+        elif char.isupper():  
+            binary_string += "1"  
 
-hidden_message = ""
-for i in range(0, len(binary_string), 8):
-    byte = binary_string[i:i+8]
-    if len(byte) == 8:
-        decimal_value = int(byte, 2)
-        hidden_message += chr(decimal_value)
+hidden_message = ""  
+for i in range(0, len(binary_string), 8):  
+    byte = binary_string[i:i+8]  
+    if len(byte) == 8:  
+        decimal_value = int(byte, 2)  
+        hidden_message += chr(decimal_value)  
 
-print(f"The hidden message is: {hidden_message}")
+print(f"The hidden message is: {hidden_message}")  
 ```
 
 - **Flag:** `brunner{I_like_Baking_More_That_Programming}`
