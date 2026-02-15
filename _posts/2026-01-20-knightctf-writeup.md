@@ -152,12 +152,6 @@ Ghép theo định dạng `KCTF{version_username}`.
 KCTF{6.9_kadmin_user}
 ```
 
-Chúc mừng bạn đã tìm ra Flag! Đây là một bài học kinh điển về định dạng Flag trong CTF: đôi khi chúng ta tìm đúng thông tin nhưng định dạng (format) yêu cầu thay đổi ký tự đặc biệt (từ `-` sang `_`).
-
-Dưới đây là bản **Write-up (WU)** chi tiết và chuyên nghiệp cho bài này.
-
----
-
 ## Vulnerability Exploitation
 **File:** `pcap2.pcapng`
 
@@ -212,10 +206,6 @@ Trong hai plugin trên, **Social Warfare** nổi tiếng với lỗ hổng thự
 ```
 KCTF{social_warfare_3.5.2}
 ```
-
-Dưới đây là bài **Write-up (WU)** hoàn chỉnh và chi tiết cho thử thách này. Bạn có thể sử dụng nó để lưu trữ tài liệu hoặc chia sẻ với team.
-
----
 
 ## Post-Exploitation
 **File:** `pcap3.pcapng`
@@ -272,10 +262,6 @@ Ghép theo định dạng `KCTF{httpPort_revshellPort}`:
 ```
 KCTF{8767_9576}
 ```
-
-Dưới đây là bản **Write-up (WU)** hoàn chỉnh cho thử thách cuối cùng này. Bạn có thể sử dụng nội dung này để tổng hợp lại quá trình điều tra của mình.
-
----
 
 ## Database Credentials Theft
 **File:** `pcap3.pcapng`
