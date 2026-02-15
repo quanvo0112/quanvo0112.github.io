@@ -70,7 +70,9 @@ print(f"Recovered Key (Hex): {key_hex_str}")
 print("-" * 30)
 print(f"Decrypted Message: {decrypted_message}")
 ```
- 
+
+Kết quả trả về:  
+
 ![](/assets/img/imaginaryCTF2025/redacted.png)  
 
 - **Flag:** `ictf{xor_is_bad_bad_encryption}`
@@ -113,7 +115,7 @@ I hear that multilingual codenames is all the rage these days. Flag is in /flag.
 - **Attachment:**  source code but i forgot the attachment's name
 - **Cách giải:**
 
-```
+```bash
 curl 'http://34.72.72.63:36188/create_game' \
   -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7' \
   -H 'Accept-Language: vi-VN,vi;q=0.9,fr-FR;q=0.8,fr;q=0.7,en-US;q=0.6,en;q=0.5' \
