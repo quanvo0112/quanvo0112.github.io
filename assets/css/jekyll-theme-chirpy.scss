@@ -61,8 +61,8 @@ pre {
 /* Prompt for flag */
 /* Dark mode prompt-flag */
 .prompt-flag {
-  border-left: 0.25rem solid #e63946;
-  background-color: #303357;
+  border-left: 0.25rem solid #000000;
+  background-color: #620441;
   padding: 0.75rem 1rem 0.75rem 2.5rem;
   border-radius: 0.5rem;
   margin: 1rem 0;
@@ -73,7 +73,7 @@ pre {
 }
 
 .prompt-flag::before {
-  content: '🏁';
+  content: '🏳️';
   top: 45%;
   transform: translateY(-50%);
   font-size: 1.2rem;

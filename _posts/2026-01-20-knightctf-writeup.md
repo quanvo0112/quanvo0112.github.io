@@ -5,11 +5,11 @@ categories: [Security, CTF]
 tags: [writeup, networking, pcap]
 ---
 
-## Networking
+## **Networking**
 
-### Reconnaissance
+### **Reconnaissance**
 
-**Attachment:** `pcap1.pcapng`
+Attachment: `pcap1.pcapng`
 
 #### 1. Phân tích đề bài
 *   **Tình huống:** Hệ thống IDS phát hiện hoạt động quét mạng (scanning) nhắm vào cơ sở hạ tầng công ty.
@@ -49,13 +49,11 @@ Các port 443 đến từ IP lạ bên ngoài Internet nên không tính.
 
 Tổng số cổng mở tìm thấy là: **2**.
 
-**Flag:**
-```
-KCTF{2}
-```
+> Flag: `KCTF{2}`
+{: .prompt-flag }
 
-### Gateway Identification
-**Attachment:** `pcap1.pcapng`
+### **Gateway Identification**
+Attachment: `pcap1.pcapng`
 
 #### 1. Phân tích đề bài
 *   **Mục tiêu:** Xác định hãng sản xuất (Vendor) của thiết bị làm **Default Gateway** (Cổng mặc định/Router) trong mạng.
@@ -87,13 +85,11 @@ Từ tên hiển thị "NetisTechnol", ta xác định được vendor của thi
 #### 3. Kết luận
 Kẻ tấn công hoặc người dùng đang sử dụng Router của hãng Netis làm Gateway cho mạng này.
 
-**Flag:**
-```
-KCTF{Netis}
-```
+> Flag: `KCTF{Netis}`
+{: .prompt-flag }
 
-### Exploitation
-**Attachment:** `pcap2.pcapng`
+### **Exploitation**
+Attachment: `pcap2.pcapng`
 
 #### 1. Phân tích đề bài
 *   **Tình huống:** Kẻ tấn công đã xác định được một ứng dụng web đang chạy trên máy chủ.
@@ -148,13 +144,11 @@ Tên người dùng thường bị lộ khi kẻ tấn công thực hiện hành
 
 Ghép theo định dạng `KCTF{version_username}`.
 
-**Flag:**
-```
-KCTF{6.9_kadmin_user}
-```
+> Flag: `KCTF{6.9_kadmin_user}`
+{: .prompt-flag }
 
-### Vulnerability Exploitation
-**Attachment:** `pcap2.pcapng`
+### **Vulnerability Exploitation**
+Attachment: `pcap2.pcapng`
 
 #### 1. Phân tích đề bài
 *   **Tình huống:** Website bị xâm nhập thông qua một lỗ hổng đã biết (known vulnerability) trong một Plugin.
@@ -203,13 +197,11 @@ Trong hai plugin trên, **Social Warfare** nổi tiếng với lỗ hổng thự
 *   Version: **3.5.2**
 *   Format tên: **social_warfare**
 
-**Flag:**
-```
-KCTF{social_warfare_3.5.2}
-```
+> Flag: `KCTF{social_warfare_3.5.2}`
+{: .prompt-flag }
 
-### Post-Exploitation
-**Attachment:** `pcap3.pcapng`
+### **Post-Exploitation**
+Attachment: `pcap3.pcapng`
 
 #### 1. Phân tích đề bài
 *   **Tình huống:** Kẻ tấn công đã khai thác thành công lỗ hổng và thiết lập kết nối bền vững (persistent connection) về máy chủ điều khiển (C2).
@@ -259,13 +251,11 @@ Sau khi file `payload.txt` được tải về và thực thi, nó sẽ kích ho
 
 Ghép theo định dạng `KCTF{httpPort_revshellPort}`:
 
-**Flag:**
-```
-KCTF{8767_9576}
-```
+> Flag: `KCTF{8767_9576}`
+{: .prompt-flag }
 
-### Database Credentials Theft
-**Attachment:** `pcap3.pcapng`
+### **Database Credentials Theft**
+Attachment: `pcap3.pcapng`
 
 #### 1. Phân tích đề bài
 *   **Tình huống:** Sau khi chiếm quyền điều khiển hệ thống (Post-Exploitation), kẻ tấn công đã tìm cách đánh cắp thông tin đăng nhập Cơ sở dữ liệu (Database).
@@ -307,7 +297,5 @@ Ghép theo định dạng yêu cầu `KCTF{username_password}`.
 
 #### 3. Kết luận
 
-**Flag:**
-```
-KCTF{wpuser_wp@user123}
-```
+> Flag: `KCTF{wpuser_wp@user123}`
+{: .prompt-flag }
