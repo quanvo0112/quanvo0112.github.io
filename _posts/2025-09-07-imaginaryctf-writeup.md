@@ -3,6 +3,8 @@ title: ImaginaryCTF 2025
 date: 2025-09-07 09:00:00 +0700
 categories: [Security, CTF]
 tags: [writeup, steganography, osint, crypto, web-security, python, forensics]
+image:
+  path: /assets/img/imaginaryCTF2025/logo.jpg
 ---
 
 ## Forensics

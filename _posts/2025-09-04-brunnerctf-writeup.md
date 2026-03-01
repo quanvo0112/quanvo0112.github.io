@@ -3,6 +3,8 @@ title: BrunnerCTF 2025
 date: 2025-09-04 09:00:00 +0700
 categories: [Security, CTF]
 tags: [writeup, steganography, crypto, osint, web-security, python, lfi, command-injection, minecraft]
+image: 
+  path: /assets/img/BrunnerCTF2025/logo.png
 ---
 
 ## Shake & Bake

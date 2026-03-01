@@ -3,6 +3,8 @@ title: LACTF 2026
 date: 2026-02-14 09:00:00 +0700
 categories: [Security, CTF]
 tags: [writeup, web-security]
+image:
+  path: /assets/img/LACTF2026/logo.gif
 ---
 
 ## **Web**

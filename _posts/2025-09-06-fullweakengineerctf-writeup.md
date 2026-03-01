@@ -3,6 +3,8 @@ title: FullWeakEngineerCTF 2025
 date: 2025-09-06 09:00:00 +0700
 categories: [Security, CTF]
 tags: [writeup, steganography, osint, minecraft]
+image:
+  path: /assets/img/fweCTF2025/logo.jpg
 ---
 
 ## Misc
