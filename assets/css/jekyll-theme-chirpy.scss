@@ -313,3 +313,75 @@ body[data-mode='light'] {
   height: 100%;
   min-height: 200px;
 }
+
+/* === Custom Assembly (NASM) Syntax Highlight (Đồng bộ giao diện Chirpy) === */
+
+.language-nasm,
+.language-asm {
+  .highlight {
+    /* Tắt tính năng bôi đỏ (Error) của Rouge đối với các ký tự Pseudo-code (dấu =, ^) */
+    .err {
+      color: #d4d4d4 !important;
+      background-color: transparent !important;
+    }
+
+    /* Set màu chữ mặc định, KHÔNG set background để ăn theo màu chuẩn của Chirpy */
+    code {
+      color: #d4d4d4;
+    }
+
+    /* Instructions / Keywords (mov, push, int, loop, v.v.) */
+    .k,
+    .kd,
+    .kp {
+      color: #569cd6;
+    }
+
+    /* Registers & Variables (rcx, rsi, rdx) */
+    .n,
+    .nv,
+    .no,
+    .nb,
+    .nx {
+      color: #9cdcfe;
+    }
+
+    /* Labels (loop:) */
+    .nl,
+    .nc,
+    .nf {
+      color: #dcdcaa;
+    }
+
+    /* Numbers (Hex, Decimals - vd: 0, 7, 41) */
+    .m,
+    .mi,
+    .mh,
+    .mf {
+      color: #b5cea8;
+    }
+
+    /* Strings */
+    .s,
+    .sa,
+    .sb,
+    .dl {
+      color: #ce9178;
+    }
+
+    /* Comments (; comment) */
+    .c,
+    .c1,
+    .cm,
+    .cp {
+      color: #6a9955;
+      font-style: italic;
+    }
+
+    /* Operators and Punctuation (dấu =, %, ^, ngoặc vuông) */
+    .o,
+    .p {
+      color: #d4d4d4;
+    }
+  }
+}
