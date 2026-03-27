@@ -24,7 +24,7 @@ Join the discord and read the rules
 
 I speedran minecraft but MCSR didn't accept my run :(
 
-- Attachments: challenge.zip
+- Attachments: `challenge.zip`
 - Cách giải:
 
 Khi vào thế giới
@@ -69,7 +69,7 @@ HINT: The kid (who may or may not be me) is outside a lemonade stand with his fr
 
 HINT 2: The house in the image is NOT the correct house.
 
-- Attachments: momgetthecamera.png
+- Attachments: `momgetthecamera.png`
 - Cách giải:
 
 ![](/assets/img/BKCTF2026/momgetthecamera.png)
@@ -86,7 +86,7 @@ can you dedeuce where this photo was taken?
 
 Flag format is the name of the location the image was taken from (ie the location of the photographer). All lower case, remove spaces. Example: bkctf{goldengatebridge}
 
-- Attachments: sky.jpg
+- Attachments: `sky.jpg`
 - Cách giải: 
 
 Bước 1: Xác định Landmark cốt lõi

@@ -19,7 +19,7 @@ Usage of the /guess Command /guess (Coordinate_X) (Coordinate_Y) (Coordinate_Z) 
 
 > minecraft.bitskrieg.in:25565
 
-- Attachment: 2026-02-19_00.20.22.png
+- Attachment: `2026-02-19_00.20.22.png`
 - Cách giải:
 
 **Bước 1: Chuẩn bị và kết nối**  
