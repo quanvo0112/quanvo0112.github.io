@@ -7,9 +7,9 @@ image:
   path: /assets/img/BKCTF2026/logo.png
 ---
 
-## Misc
+## **Misc**
 
-### Read the rules
+### **Read the rules**
 - Tác giả: BatmansKitchen
 - Mô tả: 
 
@@ -18,7 +18,7 @@ Join the discord and read the rules
 > Flag: `bkctf{1_r34d_th3_ru13z_4nd_1t_w4s_gr34t}`
 {: .prompt-flag }
 
-### Speedrunning
+### **Speedrunning**
 - Tác giả: Jono
 - Mô tả: 
 
@@ -54,9 +54,9 @@ Ghép lại toàn bộ ta nhận được flag hoàn chỉnh:
 > Flag: `bkctf{m1nc3dr4ft_m4nhunt_0n3_hunt3r}`
 {: .prompt-flag }
 
-## OSINT
+## **OSINT**
 
-### MOM GET THE CAMERA
+### **MOM GET THE CAMERA**
 
 - Tác giả: Jono
 - Mô tả:
@@ -77,7 +77,7 @@ HINT 2: The house in the image is NOT the correct house.
 > Flag: `bkctf{20514_ne_23rd_ct}`
 {: .prompt-flag }
 
-### Eye on the Sky 2
+### **Eye on the Sky 2**
 
 - Tác giả: Aramdana
 - Mô tả: 

@@ -7,9 +7,9 @@ image:
   path: /assets/img/0xFunCTF2026/logo.png
 ---
 
-## OSINT
+## **OSINT**
 
-### MultiVerse
+### **MultiVerse**
 
 - Tác giả: x03e
 - Mô tả:  

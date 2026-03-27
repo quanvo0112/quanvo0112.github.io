@@ -7,9 +7,9 @@ image:
   path: /assets/img/BITSCTF2026/logo.png
 ---
 
-## Misc
+## **Misc**
 
-### Wifies_Lover # 1
+### **Wifies_Lover # 1**
 - Tác giả: kekwman
 - Mô tả: 
 
@@ -46,9 +46,9 @@ Hệ thống ghi nhận tọa độ chính xác và trả về flag.
 > Flag: `BITSCTF{G0D5p33d_F3ll0w_reb3l}`
 {: .prompt-flag }
 
-## OSINT
+## **OSIN**T
 
-### Nostalgia Trip
+### **Nostalgia Trip**
 
 - Tác giả: kekwman
 - Mô tả: 

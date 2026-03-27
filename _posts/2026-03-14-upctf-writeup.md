@@ -16,7 +16,7 @@ image:
 
 whaaaaaaaaat
 
-- Attachments: 0day-ip.zip
+- Attachments: `0day-ip.zip`
 - Cách giải:
 
 Kiểm tra mã nguồn `server.py`, ta thấy ứng dụng nhận đầu vào là một địa chỉ IP và tiến hành validate thông qua thư viện `ipaddress`:
