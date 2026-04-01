@@ -161,7 +161,7 @@ I was passing through this street when I stopped to take a photo. It’s a place
 
 Format - upCTF{name_surname} Example - upCTF{Jane_Doe}
 
-- Attachments: left-behind.zip
+- Attachments: `left-behind.zip`
 - Cách giải:
 
 #### **1. Phân tích đề bài và Dữ liệu ban đầu**
