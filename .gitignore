@@ -25,7 +25,3 @@ package-lock.json
 # Misc
 _sass/vendors
 assets/js/dist
-
-# Post
-_posts/2026-05-15-cybergamectf-writeup.md
-assets/img/Cybergame2026
