@@ -1,0 +1,384 @@
+---
+layout: none
+title: Portfolio
+permalink: /my-portfolio/
+---
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vo Hoang Anh Quan — Portfolio</title>
+    <meta name="description" content="Portfolio & CV của Vo Hoang Anh Quan — IT Student, Information Security">
+    <style>
+      :root {
+        --bg: #ffffff;
+        --fg: #1a1a1a;
+        --muted: #6b7280;
+        --accent: #2563eb;
+        --border: #e5e7eb;
+        --card: #f9fafb;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0f1115;
+          --fg: #e5e7eb;
+          --muted: #9ca3af;
+          --accent: #60a5fa;
+          --border: #24272e;
+          --card: #171a20;
+        }
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      nav {
+        position: sticky;
+        top: 0;
+        background: var(--bg);
+        border-bottom: 0.5px solid var(--border);
+        z-index: 10;
+      }
+      nav .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 16px;
+        padding-bottom: 16px;
+      }
+      nav .name {
+        font-weight: 600;
+        font-size: 16px;
+      }
+      nav .links a {
+        color: var(--muted);
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 14px;
+        transition: color 0.15s;
+      }
+      nav .links a:hover {
+        color: var(--accent);
+      }
+      header {
+        padding: 56px 0 40px;
+      }
+      .hero {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .avatar {
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        background: var(--accent);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        font-weight: 600;
+      }
+      header h1 {
+        font-size: 28px;
+        font-weight: 600;
+      }
+      header .role {
+        color: var(--muted);
+        font-size: 16px;
+        margin-top: 2px;
+      }
+      .intro {
+        margin-top: 20px;
+        color: var(--fg);
+      }
+      .actions {
+        margin-top: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .btn {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 8px;
+        border: 0.5px solid var(--border);
+        background: var(--card);
+        color: var(--fg);
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.15s;
+      }
+      .btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+      .btn.primary {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+      .btn.primary:hover {
+        opacity: 0.9;
+        color: #fff;
+      }
+      section {
+        padding: 32px 0;
+        border-top: 0.5px solid var(--border);
+      }
+      section h2 {
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: var(--muted);
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 16px;
+      }
+      .project {
+        border: 0.5px solid var(--border);
+        border-radius: 10px;
+        padding: 18px;
+        background: var(--card);
+      }
+      .project h3 {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .project p {
+        font-size: 14px;
+        color: var(--muted);
+        margin-top: 6px;
+      }
+      .project .stack {
+        font-size: 12px;
+        color: var(--accent);
+        margin-top: 10px;
+      }
+      .project a {
+        color: var(--accent);
+        font-size: 13px;
+        text-decoration: none;
+        margin-top: 8px;
+        display: inline-block;
+      }
+      .skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .skill {
+        font-size: 13px;
+        padding: 5px 12px;
+        border-radius: 20px;
+        background: var(--card);
+        border: 0.5px solid var(--border);
+      }
+      .exp-item {
+        margin-bottom: 20px;
+      }
+      .exp-item h3 {
+        font-size: 16px;
+        font-weight: 600;
+      }
+      .exp-item .meta {
+        font-size: 13px;
+        color: var(--muted);
+        margin: 2px 0 6px;
+      }
+      .exp-item p {
+        font-size: 14px;
+        color: var(--fg);
+      }
+      footer {
+        padding: 40px 0;
+        border-top: 0.5px solid var(--border);
+        color: var(--muted);
+        font-size: 13px;
+        text-align: center;
+      }
+      footer a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      @media (max-width: 520px) {
+        .hero {
+          flex-direction: column;
+          text-align: center;
+        }
+        header h1 {
+          font-size: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap">
+        <span class="name">Vo Hoang Anh Quan</span>
+        <div class="links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="/">Blog</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="wrap">
+      <header id="about">
+        <div class="hero">
+          <div class="avatar">VQ</div>
+          <div>
+            <h1>Vo Hoang Anh Quan</h1>
+            <div class="role">IT Student · Information Security</div>
+          </div>
+        </div>
+        <p class="intro">
+          Xin chào! Tôi là sinh viên ngành Công nghệ thông tin, chuyên ngành An toàn thông tin tại Trường Đại học Khoa
+          học Tự nhiên, ĐHQG-HCM (dự kiến tốt nghiệp 09/2026, GPA 3.38/4.0). Tôi có kinh nghiệm làm fullstack/backend
+          qua các dự án học thuật và cá nhân, đồng thời yêu thích tham gia các cuộc thi Capture The Flag (CTF) về bảo
+          mật.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="/assets/cv.pdf">Tải CV (PDF)</a>
+          <a class="btn" href="https://github.com/quanvo0112">GitHub</a>
+          <a class="btn" href="mailto:vohoanganhquan.work@gmail.com">Email</a>
+        </div>
+      </header>
+
+      <section id="projects">
+        <h2>Dự án nổi bật</h2>
+        <div class="grid">
+          <div class="project">
+            <h3>Flight Ticket Booking System</h3>
+            <p>
+              Backend Developer, dự án nhóm học thuật. Xây dựng chức năng backend cho hệ thống đặt vé máy bay mô phỏng:
+              tìm chuyến bay, đặt vé, xử lý thanh toán.
+            </p>
+            <!-- TODO: xác nhận lại tech stack thật (CV ghi tạm) -->
+            <div class="stack">Java Spring Boot · MySQL</div>
+            <a href="https://github.com/quanvo0112/AirplaneTicketSeller">Xem trên GitHub →</a>
+          </div>
+          <div class="project">
+            <h3>Class Scheduler</h3>
+            <p>
+              Tester & Data Engineer, dự án cá nhân. Kiểm thử ứng dụng xếp lịch học viết bằng C với Raylib; crawl và xử
+              lý dữ liệu môn học/lịch học để nạp vào ứng dụng.
+            </p>
+            <div class="stack">C · Raylib</div>
+            <a href="https://github.com/quanvo0112/SchedulerRaylibHCMUS">Xem trên GitHub →</a>
+          </div>
+          <div class="project">
+            <h3>Cafe & Restaurant POS System</h3>
+            <p>
+              Fullstack Developer, dự án nhóm học thuật. Xây dựng hệ thống quản lý bán hàng (POS) cho quán cà phê/nhà
+              hàng: quản lý đơn hàng, tồn kho, hóa đơn.
+            </p>
+            <!-- TODO: xác nhận lại tech stack thật -->
+            <div class="stack">C# · WinUI 3 · .NET</div>
+            <a href="https://github.com/quanvo0112/WP-Capybara-Vibe">Xem trên GitHub →</a>
+          </div>
+          <div class="project">
+            <h3>Drawing Application</h3>
+            <p>
+              Backend Developer & Tester, dự án nhóm học thuật. Phát triển logic backend và kiểm thử ứng dụng vẽ đa nền
+              tảng viết bằng Flutter/Dart.
+            </p>
+            <div class="stack">Flutter · Dart</div>
+            <a href="https://github.com/quanvo0112/WP-Paint-App">Xem trên GitHub →</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="ctf">
+        <h2>Capture the flag (CTF)</h2>
+        <p style="font-size:14px; color:var(--fg); margin-bottom:14px;">
+          Tôi thường xuyên tham gia các giải CTF về an toàn thông tin và viết lại writeup trên blog.
+        </p>
+        <div class="grid">
+          <div class="project">
+            <h3>DawgCTF Writeup</h3>
+            <p>Phân tích và giải các thử thách bảo mật trong giải DawgCTF.</p>
+            <!-- TODO: kiểm tra lại đúng đường dẫn bài viết trên blog -->
+            <a href="/posts/dawgctf-writeup/">Đọc writeup →</a>
+          </div>
+          <div class="project">
+            <h3>CyberGameCTF Writeup</h3>
+            <p>Phân tích và giải các thử thách bảo mật trong giải CyberGameCTF.</p>
+            <a href="/posts/cybergamectf-writeup/">Đọc writeup →</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Kỹ năng</h2>
+        <div class="skills">
+          <span class="skill">Python</span>
+          <span class="skill">Java</span>
+          <span class="skill">C++</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">React</span>
+          <span class="skill">Spring</span>
+          <span class="skill">MySQL</span>
+          <span class="skill">Git</span>
+          <span class="skill">Linux</span>
+          <span class="skill">Docker</span>
+        </div>
+        <p style="font-size:13px; color:var(--muted); margin-top:14px;">
+          Ngôn ngữ: Tiếng Việt (bản ngữ) · Tiếng Anh (IELTS 5.5 Academic)
+        </p>
+      </section>
+
+      <section id="education">
+        <h2>Học vấn</h2>
+        <div class="exp-item">
+          <h3>Trường Đại học Khoa học Tự nhiên, ĐHQG-HCM</h3>
+          <div class="meta">Dự kiến tốt nghiệp: 09/2026</div>
+          <p>Cử nhân Công nghệ thông tin, chuyên ngành An toàn thông tin. GPA: 3.38/4.0.</p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Liên hệ</h2>
+        <p>
+          Email:
+          <a href="mailto:vohoanganhquan.work@gmail.com" style="color:var(--accent);text-decoration:none;"
+            >vohoanganhquan.work@gmail.com</a
+          >
+        </p>
+        <p>Điện thoại: 0767 147 226</p>
+        <p>
+          GitHub:
+          <a href="https://github.com/quanvo0112" style="color:var(--accent);text-decoration:none;"
+            >github.com/quanvo0112</a
+          >
+        </p>
+      </section>
+    </div>
+
+    <footer>
+      © {{ site.time | date: '%Y' }} Vo Hoang Anh Quan · Built with <a href="https://jekyllrb.com/">Jekyll</a>
+    </footer>
+  </body>
+</html>

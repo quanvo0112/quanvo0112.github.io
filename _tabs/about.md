@@ -7,3 +7,5 @@ order: 4
 > Hi, I'm quanvo0112 aka K1llV — a student at the University of Science (VNUHCM), passionate about cybersecurity, CTFs, and software development; currently working on Python and web projects and learning Spring Boot and ReactJS.
 
 {: .prompt-tip }
+
+For my full resume, projects, and skills, check out my [portfolio](/my-portfolio).
