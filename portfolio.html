@@ -10,6 +10,24 @@ permalink: /my-portfolio/
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>quan@security:~/portfolio</title>
     <meta name="description" content="Portfolio của Vo Hoang Anh Quan (K1llV) — IT Student, Information Security">
+
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/portfolio/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/portfolio/favicon-16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/portfolio/favicon-180.png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Vo Hoang Anh Quan — Portfolio">
+    <meta
+      property="og:description"
+      content="IT Student · Information Security · aka K1llV — dự án, CTF writeups và kỹ năng."
+    >
+    <meta property="og:image" content="https://quanvo0112.github.io/assets/portfolio/og-image.png">
+    <meta property="og:url" content="https://quanvo0112.github.io/my-portfolio/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vo Hoang Anh Quan — Portfolio">
+    <meta name="twitter:description" content="IT Student · Information Security · aka K1llV">
+    <meta name="twitter:image" content="https://quanvo0112.github.io/assets/portfolio/og-image.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -532,6 +550,9 @@ permalink: /my-portfolio/
             <span class="u">quan</span><span class="h">@security</span><span class="p">:~$</span>
             <span class="cmd">ls -la ./projects</span>
           </p>
+          <p style="font-family:var(--mono); font-size:12px; color:var(--text-faint); margin:-6px 0 16px;">
+            # dự án nhóm — repo thuộc về teammate, mình đóng góp với vai trò dưới đây
+          </p>
           <table class="ls-table">
             <caption>
               total 4
@@ -550,17 +571,22 @@ permalink: /my-portfolio/
                   <div class="proj-name">flight-ticket-booking/</div>
                   <div class="proj-role">Backend Developer · dự án nhóm học thuật</div>
                   <div class="proj-desc">
-                    Chức năng backend cho hệ thống đặt vé máy bay mô phỏng: tìm chuyến bay, đặt vé, thanh toán.
+                    Đồ án cuối kỳ môn Nhập môn Công nghệ phần mềm — nền tảng đặt vé máy bay: frontend React + Vite,
+                    backend Node.js kết nối MongoDB Atlas, xác thực bằng JWT; luồng thanh toán ở mức mock (chưa tích hợp
+                    cổng thanh toán thật).
                   </div>
-                  <div class="proj-tags"><span class="tag">java-spring</span><span class="tag">mysql</span></div>
+                  <div class="proj-tags">
+                    <span class="tag">react</span><span class="tag">vite</span><span class="tag">node.js</span
+                    ><span class="tag">mongodb</span>
+                  </div>
                 </td>
                 <td>
                   <a
                     class="proj-link"
-                    href="https://github.com/quanvo0112/AirplaneTicketSeller"
+                    href="https://github.com/hydroq04/AirplaneTicketSeller"
                     target="_blank"
                     rel="noopener"
-                    >github ↗</a
+                    >team repo ↗</a
                   >
                 </td>
               </tr>
@@ -568,19 +594,23 @@ permalink: /my-portfolio/
                 <td class="perm">-rwxr-xr-x</td>
                 <td>
                   <div class="proj-name">class-scheduler/</div>
-                  <div class="proj-role">Tester &amp; Data Engineer · dự án cá nhân</div>
+                  <div class="proj-role">Tester &amp; Data Engineer · dự án cá nhân cùng 1 người bạn</div>
                   <div class="proj-desc">
-                    Kiểm thử ứng dụng xếp lịch học (C, Raylib); crawl và xử lý dữ liệu lịch học.
+                    Ứng dụng desktop xếp lịch học viết bằng C/Raylib, đọc dữ liệu môn học từ file dạng tab-delimited;
+                    kèm theo một Chrome extension tự viết để crawl trực tiếp trang "List of Open Class" trên cổng thông
+                    tin sinh viên HCMUS.
                   </div>
-                  <div class="proj-tags"><span class="tag">c</span><span class="tag">raylib</span></div>
+                  <div class="proj-tags">
+                    <span class="tag">c</span><span class="tag">raylib</span><span class="tag">chrome-extension</span>
+                  </div>
                 </td>
                 <td>
                   <a
                     class="proj-link"
-                    href="https://github.com/quanvo0112/SchedulerRaylibHCMUS"
+                    href="https://github.com/hongphuchcmus/SchedulerRaylibHCMUS"
                     target="_blank"
                     rel="noopener"
-                    >github ↗</a
+                    >team repo ↗</a
                   >
                 </td>
               </tr>
@@ -590,19 +620,22 @@ permalink: /my-portfolio/
                   <div class="proj-name">pos-system/</div>
                   <div class="proj-role">Fullstack Developer · dự án nhóm học thuật</div>
                   <div class="proj-desc">
-                    Hệ thống quản lý bán hàng (POS) cho quán cà phê/nhà hàng: đơn hàng, tồn kho, hóa đơn.
+                    Hệ thống POS (Capybara Vibe) cho quán café/nhà hàng nhỏ, xây theo kiến trúc MVVM + Clean
+                    Architecture trên WinUI 3/.NET 8; PostgreSQL chạy qua Docker, quản lý schema bằng EF Core
+                    Migrations, có bộ unit test riêng.
                   </div>
                   <div class="proj-tags">
-                    <span class="tag">csharp</span><span class="tag">winui3</span><span class="tag">dotnet</span>
+                    <span class="tag">csharp</span><span class="tag">winui3</span><span class="tag">.net8</span
+                    ><span class="tag">postgresql</span><span class="tag">clean-architecture</span>
                   </div>
                 </td>
                 <td>
                   <a
                     class="proj-link"
-                    href="https://github.com/quanvo0112/WP-Capybara-Vibe"
+                    href="https://github.com/zenniskayy2k4/WP-Capybara-Vibe"
                     target="_blank"
                     rel="noopener"
-                    >github ↗</a
+                    >team repo ↗</a
                   >
                 </td>
               </tr>
@@ -611,12 +644,21 @@ permalink: /my-portfolio/
                 <td>
                   <div class="proj-name">drawing-app/</div>
                   <div class="proj-role">Backend Developer &amp; Tester · dự án nhóm học thuật</div>
-                  <div class="proj-desc">Logic backend và kiểm thử ứng dụng vẽ đa nền tảng viết bằng Flutter/Dart.</div>
-                  <div class="proj-tags"><span class="tag">flutter</span><span class="tag">dart</span></div>
+                  <div class="proj-desc">
+                    Công cụ vẽ đa nền tảng (Windows, Android, iOS, macOS, Linux, Web) bằng Flutter/Dart: vẽ hình khối,
+                    vẽ tự do, định dạng file nhị phân riêng để lưu/tải trạng thái canvas, xuất ảnh PNG/JPEG.
+                  </div>
+                  <div class="proj-tags">
+                    <span class="tag">flutter</span><span class="tag">dart</span><span class="tag">cross-platform</span>
+                  </div>
                 </td>
                 <td>
-                  <a class="proj-link" href="https://github.com/quanvo0112/WP-Paint-App" target="_blank" rel="noopener"
-                    >github ↗</a
+                  <a
+                    class="proj-link"
+                    href="https://github.com/zenniskayy2k4/WP-Paint-App"
+                    target="_blank"
+                    rel="noopener"
+                    >team repo ↗</a
                   >
                 </td>
               </tr>
