@@ -8,383 +8,731 @@ permalink: /my-portfolio/
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vo Hoang Anh Quan — Portfolio</title>
-    <meta name="description" content="Portfolio & CV của Vo Hoang Anh Quan — IT Student, Information Security">
+    <title>quan@security:~/portfolio</title>
+    <meta name="description" content="Portfolio của Vo Hoang Anh Quan (K1llV) — IT Student, Information Security">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    >
     <style>
       :root {
-        --bg: #ffffff;
-        --fg: #1a1a1a;
-        --muted: #6b7280;
-        --accent: #2563eb;
-        --border: #e5e7eb;
-        --card: #f9fafb;
-      }
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --bg: #0f1115;
-          --fg: #e5e7eb;
-          --muted: #9ca3af;
-          --accent: #60a5fa;
-          --border: #24272e;
-          --card: #171a20;
-        }
+        --bg: #0a0d12;
+        --bg-panel: #0f1319;
+        --bg-elevated: #141a23;
+        --bg-row-hover: #1a2028;
+        --border: #1f2530;
+        --border-bright: #2c3444;
+        --text: #e6e3dc;
+        --text-dim: #838d99;
+        --text-faint: #4b5363;
+        --amber: #ffb454;
+        --amber-dim: #cc8f43;
+        --green: #7ee081;
+        --green-dim: #4f9457;
+        --red: #e5534b;
+        --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+        --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       }
       * {
         box-sizing: border-box;
-        margin: 0;
-        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
       }
       body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        margin: 0;
         background: var(--bg);
-        color: var(--fg);
+        color: var(--text);
+        font-family: var(--sans);
         line-height: 1.65;
         -webkit-font-smoothing: antialiased;
+        background-image: radial-gradient(ellipse 900px 500px at 50% -10%, rgba(255, 180, 84, 0.06), transparent 60%);
       }
-      .wrap {
-        max-width: 760px;
-        margin: 0 auto;
-        padding: 0 24px;
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        background: repeating-linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.012) 0px,
+          rgba(255, 255, 255, 0.012) 1px,
+          transparent 1px,
+          transparent 3px
+        );
+        opacity: 0.5;
       }
-      nav {
-        position: sticky;
-        top: 0;
-        background: var(--bg);
-        border-bottom: 0.5px solid var(--border);
-        z-index: 10;
+      a {
+        color: var(--amber);
       }
-      nav .wrap {
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--amber);
+        outline-offset: 3px;
+        border-radius: 2px;
+      }
+
+      .terminal {
+        position: relative;
+        z-index: 2;
+        max-width: 920px;
+        margin: 32px auto 64px;
+        border: 1px solid var(--border-bright);
+        border-radius: 12px;
+        overflow: hidden;
+        background: var(--bg-panel);
+        box-shadow: 0 40px 100px -30px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.02);
+      }
+      .titlebar {
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        padding-top: 16px;
-        padding-bottom: 16px;
+        gap: 10px;
+        padding: 13px 16px;
+        background: var(--bg-elevated);
+        border-bottom: 1px solid var(--border);
       }
-      nav .name {
-        font-weight: 600;
-        font-size: 16px;
-      }
-      nav .links a {
-        color: var(--muted);
-        text-decoration: none;
-        margin-left: 20px;
-        font-size: 14px;
-        transition: color 0.15s;
-      }
-      nav .links a:hover {
-        color: var(--accent);
-      }
-      header {
-        padding: 56px 0 40px;
-      }
-      .hero {
+      .tl-dots {
         display: flex;
-        align-items: center;
-        gap: 20px;
+        gap: 7px;
       }
-      .avatar {
-        width: 72px;
-        height: 72px;
+      .tl-dot {
+        width: 11px;
+        height: 11px;
         border-radius: 50%;
-        flex-shrink: 0;
-        background: var(--accent);
-        color: #fff;
+      }
+      .tl-dot.r {
+        background: #e5534b;
+      }
+      .tl-dot.y {
+        background: #f5b942;
+      }
+      .tl-dot.g {
+        background: #3fb950;
+      }
+      .titlebar-label {
+        margin: 0 auto;
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--text-dim);
+        letter-spacing: 0.02em;
+      }
+
+      .tabs {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 26px;
-        font-weight: 600;
+        gap: 2px;
+        padding: 0 10px;
+        background: var(--bg-panel);
+        border-bottom: 1px solid var(--border);
+        overflow-x: auto;
+        scrollbar-width: none;
       }
-      header h1 {
-        font-size: 28px;
-        font-weight: 600;
+      .tabs::-webkit-scrollbar {
+        display: none;
       }
-      header .role {
-        color: var(--muted);
-        font-size: 16px;
-        margin-top: 2px;
+      .tab {
+        font-family: var(--mono);
+        font-size: 12px;
+        padding: 10px 14px;
+        color: var(--text-faint);
+        border-bottom: 2px solid transparent;
+        white-space: nowrap;
+        text-decoration: none;
+        transition: color 0.15s, border-color 0.15s;
       }
-      .intro {
-        margin-top: 20px;
-        color: var(--fg);
+      .tab:hover,
+      .tab:focus-visible {
+        color: var(--amber);
+        border-bottom-color: var(--amber-dim);
       }
-      .actions {
-        margin-top: 24px;
+
+      .session {
+        padding: 32px clamp(18px, 4vw, 44px) 48px;
+      }
+
+      .prompt {
+        font-family: var(--mono);
+        font-size: 13px;
+        color: var(--text-dim);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        align-items: baseline;
+        margin: 0 0 14px;
+      }
+      .prompt .u {
+        color: var(--green);
+      }
+      .prompt .h {
+        color: var(--text-faint);
+      }
+      .prompt .p {
+        color: var(--amber);
+      }
+      .prompt .cmd {
+        color: var(--text);
+      }
+      .cursor {
+        display: inline-block;
+        width: 8px;
+        height: 15px;
+        background: var(--amber);
+        margin-left: 2px;
+        animation: blink 1s step-end infinite;
+        vertical-align: text-bottom;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .cursor {
+          animation: none;
+          opacity: 1;
+        }
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .out {
+        margin: 0 0 52px;
+      }
+      .out:last-of-type {
+        margin-bottom: 0;
+      }
+
+      /* Hero */
+      .hero-name {
+        font-family: var(--mono);
+        font-weight: 700;
+        font-size: clamp(26px, 4vw, 38px);
+        color: var(--text);
+        margin: 0 0 6px;
+        letter-spacing: -0.01em;
+      }
+      .hero-role {
+        color: var(--amber);
+        font-family: var(--mono);
+        font-size: 14px;
+        margin: 0 0 18px;
+      }
+      .hero-intro {
+        max-width: 62ch;
+        color: var(--text);
+        font-size: 15.5px;
+      }
+      .flags {
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
+        margin-top: 24px;
       }
-      .btn {
-        display: inline-block;
-        padding: 8px 16px;
-        border-radius: 8px;
-        border: 0.5px solid var(--border);
-        background: var(--card);
-        color: var(--fg);
+      .flag {
+        font-family: var(--mono);
+        font-size: 13px;
+        padding: 9px 16px;
+        border-radius: 6px;
+        border: 1px solid var(--border-bright);
+        color: var(--text);
         text-decoration: none;
-        font-size: 14px;
-        transition: all 0.15s;
+        background: var(--bg-elevated);
+        transition: border-color 0.15s, color 0.15s, transform 0.1s;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
       }
-      .btn:hover {
-        border-color: var(--accent);
-        color: var(--accent);
+      .flag:hover {
+        border-color: var(--amber);
+        color: var(--amber);
+        transform: translateY(-1px);
       }
-      .btn.primary {
-        background: var(--accent);
-        color: #fff;
-        border-color: var(--accent);
+      .flag.primary {
+        background: var(--amber);
+        color: #1a1305;
+        border-color: var(--amber);
+        font-weight: 600;
       }
-      .btn.primary:hover {
+      .flag.primary:hover {
+        color: #1a1305;
         opacity: 0.9;
-        color: #fff;
       }
-      section {
-        padding: 32px 0;
-        border-top: 0.5px solid var(--border);
-      }
-      section h2 {
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: var(--muted);
-        margin-bottom: 20px;
-        font-weight: 600;
-      }
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        gap: 16px;
-      }
-      .project {
-        border: 0.5px solid var(--border);
-        border-radius: 10px;
-        padding: 18px;
-        background: var(--card);
-      }
-      .project h3 {
-        font-size: 16px;
-        font-weight: 600;
-      }
-      .project p {
+
+      /* ls -la projects table */
+      .ls-table {
+        width: 100%;
+        border-collapse: collapse;
         font-size: 14px;
-        color: var(--muted);
+      }
+      .ls-table caption {
+        text-align: left;
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--text-faint);
+        margin-bottom: 10px;
+      }
+      .ls-table th {
+        text-align: left;
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--text-faint);
+        font-weight: 500;
+        padding: 0 12px 10px;
+        border-bottom: 1px solid var(--border);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .ls-table td {
+        padding: 14px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+      .ls-table tr:last-child td {
+        border-bottom: none;
+      }
+      .ls-table tr {
+        transition: background 0.15s;
+      }
+      .ls-table tbody tr:hover {
+        background: var(--bg-row-hover);
+      }
+      .perm {
+        font-family: var(--mono);
+        font-size: 12.5px;
+        color: var(--green-dim);
+        white-space: nowrap;
+      }
+      .proj-name {
+        font-family: var(--mono);
+        font-weight: 600;
+        color: var(--text);
+        font-size: 14.5px;
+      }
+      .proj-role {
+        color: var(--text-dim);
+        font-size: 12.5px;
+        margin-top: 2px;
+      }
+      .proj-desc {
+        color: var(--text);
+        font-size: 13.5px;
         margin-top: 6px;
+        max-width: 44ch;
       }
-      .project .stack {
-        font-size: 12px;
-        color: var(--accent);
-        margin-top: 10px;
-      }
-      .project a {
-        color: var(--accent);
-        font-size: 13px;
-        text-decoration: none;
+      .proj-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
         margin-top: 8px;
-        display: inline-block;
       }
-      .skills {
+      .tag {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--amber-dim);
+        border: 1px solid var(--border-bright);
+        padding: 2px 7px;
+        border-radius: 4px;
+      }
+      .proj-link {
+        font-family: var(--mono);
+        font-size: 12.5px;
+        color: var(--amber);
+        text-decoration: none;
+        white-space: nowrap;
+      }
+      .proj-link:hover {
+        text-decoration: underline;
+      }
+
+      /* CTF log */
+      .log-line {
+        display: flex;
+        gap: 14px;
+        align-items: baseline;
+        font-family: var(--mono);
+        font-size: 13.5px;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .log-line:last-child {
+        border-bottom: none;
+      }
+      .log-date {
+        color: var(--text-faint);
+        flex-shrink: 0;
+      }
+      .log-name {
+        color: var(--text);
+        flex: 1;
+      }
+      .log-link {
+        color: var(--green);
+        text-decoration: none;
+      }
+      .log-link:hover {
+        text-decoration: underline;
+      }
+
+      /* skills grep */
+      .grep-line {
+        font-family: var(--mono);
+        font-size: 13.5px;
+        color: var(--text-dim);
+        margin-bottom: 14px;
+      }
+      .grep-match {
+        color: var(--amber);
+      }
+      .skill-flags {
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
       }
-      .skill {
-        font-size: 13px;
-        padding: 5px 12px;
-        border-radius: 20px;
-        background: var(--card);
-        border: 0.5px solid var(--border);
+      .skill-flag {
+        font-family: var(--mono);
+        font-size: 12.5px;
+        color: var(--text);
+        background: var(--bg-elevated);
+        border: 1px solid var(--border-bright);
+        padding: 5px 11px;
+        border-radius: 5px;
       }
-      .exp-item {
-        margin-bottom: 20px;
+      .skill-flag .dd {
+        color: var(--text-faint);
       }
-      .exp-item h3 {
-        font-size: 16px;
+
+      /* education */
+      .edu-block {
+        font-size: 14.5px;
+      }
+      .edu-school {
+        font-family: var(--mono);
         font-weight: 600;
+        color: var(--text);
+        font-size: 15.5px;
       }
-      .exp-item .meta {
+      .edu-meta {
+        color: var(--text-dim);
         font-size: 13px;
-        color: var(--muted);
-        margin: 2px 0 6px;
+        margin: 4px 0 8px;
       }
-      .exp-item p {
-        font-size: 14px;
-        color: var(--fg);
-      }
-      footer {
-        padding: 40px 0;
-        border-top: 0.5px solid var(--border);
-        color: var(--muted);
+
+      /* ping contact */
+      .ping-line {
+        font-family: var(--mono);
         font-size: 13px;
-        text-align: center;
+        color: var(--text-dim);
+        padding: 5px 0;
       }
-      footer a {
-        color: var(--accent);
+      .ping-line a {
+        color: var(--green);
         text-decoration: none;
       }
-      @media (max-width: 520px) {
-        .hero {
-          flex-direction: column;
-          text-align: center;
+      .ping-line a:hover {
+        text-decoration: underline;
+      }
+      .ping-stat {
+        color: var(--text-faint);
+        font-size: 12px;
+        margin-top: 10px;
+      }
+
+      footer.term-footer {
+        padding: 16px clamp(18px, 4vw, 44px);
+        border-top: 1px solid var(--border);
+        font-family: var(--mono);
+        font-size: 12.5px;
+        color: var(--text-faint);
+      }
+      footer.term-footer a {
+        color: var(--text-dim);
+      }
+
+      @media (max-width: 640px) {
+        .ls-table thead {
+          display: none;
         }
-        header h1 {
-          font-size: 24px;
+        .ls-table,
+        .ls-table tbody,
+        .ls-table tr,
+        .ls-table td {
+          display: block;
+          width: 100%;
+        }
+        .ls-table tr {
+          padding: 14px 0;
+          border-bottom: 1px solid var(--border);
+        }
+        .ls-table td {
+          border: none;
+          padding: 2px 0;
+        }
+        .perm {
+          display: none;
+        }
+        .log-line {
+          flex-direction: column;
+          gap: 2px;
         }
       }
     </style>
   </head>
   <body>
-    <nav>
-      <div class="wrap">
-        <span class="name">Vo Hoang Anh Quan</span>
-        <div class="links">
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="/">Blog</a>
-          <a href="#contact">Contact</a>
+    <div class="terminal">
+      <div class="titlebar">
+        <div class="tl-dots">
+          <span class="tl-dot r"></span><span class="tl-dot y"></span><span class="tl-dot g"></span>
         </div>
+        <span class="titlebar-label">quan@security: ~/portfolio</span>
       </div>
-    </nav>
 
-    <div class="wrap">
-      <header id="about">
-        <div class="hero">
-          <div class="avatar">VQ</div>
+      <nav class="tabs" aria-label="Điều hướng nhanh">
+        <a class="tab" href="#about">~/whoami</a>
+        <a class="tab" href="#projects">~/projects</a>
+        <a class="tab" href="#ctf">~/ctf.log</a>
+        <a class="tab" href="#skills">~/skills</a>
+        <a class="tab" href="#education">~/education.md</a>
+        <a class="tab" href="#contact">~/contact</a>
+        <a class="tab" href="/">~/blog</a>
+      </nav>
+
+      <main class="session">
+        <section id="about" class="out">
+          <p class="prompt">
+            <span class="u">quan</span><span class="h">@security</span><span class="p">:~$</span>
+            <span class="cmd" id="typed-cmd"></span><span class="cursor" aria-hidden="true"></span>
+          </p>
+          <h1 class="hero-name">Võ Hoàng Anh Quân</h1>
+          <p class="hero-role">IT Student · Information Security · aka K1llV</p>
+          <p class="hero-intro">
+            Sinh viên Công nghệ thông tin, chuyên ngành An toàn thông tin tại Trường Đại học Khoa học Tự nhiên,
+            ĐHQG-HCM. Đam mê cybersecurity, CTF và phát triển phần mềm — hiện đang làm việc với Python, các dự án web,
+            và tìm hiểu thêm Spring Boot, ReactJS.
+          </p>
+          <div class="flags">
+            <a
+              class="flag primary"
+              href="https://drive.google.com/file/d/1JUjLBTuLojjUO-ARRKSqZgQGu1RHz_Po/view?usp=sharing"
+              target="_blank"
+              rel="noopener"
+              >--resume</a
+            >
+            <a class="flag" href="https://github.com/quanvo0112" target="_blank" rel="noopener">--github</a>
+            <a class="flag" href="mailto:vohoanganhquan.work@gmail.com">--mail</a>
+          </div>
+        </section>
+
+        <section id="projects" class="out">
+          <p class="prompt">
+            <span class="u">quan</span><span class="h">@security</span><span class="p">:~$</span>
+            <span class="cmd">ls -la ./projects</span>
+          </p>
+          <table class="ls-table">
+            <caption>
+              total 4
+            </caption>
+            <thead>
+              <tr>
+                <th style="width:110px;">perm</th>
+                <th>project</th>
+                <th style="width:140px;">link</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="perm">-rwxr-xr-x</td>
+                <td>
+                  <div class="proj-name">flight-ticket-booking/</div>
+                  <div class="proj-role">Backend Developer · dự án nhóm học thuật</div>
+                  <div class="proj-desc">
+                    Chức năng backend cho hệ thống đặt vé máy bay mô phỏng: tìm chuyến bay, đặt vé, thanh toán.
+                  </div>
+                  <div class="proj-tags"><span class="tag">java-spring</span><span class="tag">mysql</span></div>
+                </td>
+                <td>
+                  <a
+                    class="proj-link"
+                    href="https://github.com/quanvo0112/AirplaneTicketSeller"
+                    target="_blank"
+                    rel="noopener"
+                    >github ↗</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td class="perm">-rwxr-xr-x</td>
+                <td>
+                  <div class="proj-name">class-scheduler/</div>
+                  <div class="proj-role">Tester &amp; Data Engineer · dự án cá nhân</div>
+                  <div class="proj-desc">
+                    Kiểm thử ứng dụng xếp lịch học (C, Raylib); crawl và xử lý dữ liệu lịch học.
+                  </div>
+                  <div class="proj-tags"><span class="tag">c</span><span class="tag">raylib</span></div>
+                </td>
+                <td>
+                  <a
+                    class="proj-link"
+                    href="https://github.com/quanvo0112/SchedulerRaylibHCMUS"
+                    target="_blank"
+                    rel="noopener"
+                    >github ↗</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td class="perm">-rwxr-xr-x</td>
+                <td>
+                  <div class="proj-name">pos-system/</div>
+                  <div class="proj-role">Fullstack Developer · dự án nhóm học thuật</div>
+                  <div class="proj-desc">
+                    Hệ thống quản lý bán hàng (POS) cho quán cà phê/nhà hàng: đơn hàng, tồn kho, hóa đơn.
+                  </div>
+                  <div class="proj-tags">
+                    <span class="tag">csharp</span><span class="tag">winui3</span><span class="tag">dotnet</span>
+                  </div>
+                </td>
+                <td>
+                  <a
+                    class="proj-link"
+                    href="https://github.com/quanvo0112/WP-Capybara-Vibe"
+                    target="_blank"
+                    rel="noopener"
+                    >github ↗</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td class="perm">-rwxr-xr-x</td>
+                <td>
+                  <div class="proj-name">drawing-app/</div>
+                  <div class="proj-role">Backend Developer &amp; Tester · dự án nhóm học thuật</div>
+                  <div class="proj-desc">Logic backend và kiểm thử ứng dụng vẽ đa nền tảng viết bằng Flutter/Dart.</div>
+                  <div class="proj-tags"><span class="tag">flutter</span><span class="tag">dart</span></div>
+                </td>
+                <td>
+                  <a class="proj-link" href="https://github.com/quanvo0112/WP-Paint-App" target="_blank" rel="noopener"
+                    >github ↗</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section id="ctf" class="out">
+          <p class="prompt">
+            <span class="u">quan</span><span class="h">@security</span><span class="p">:~$</span>
+            <span class="cmd">cat ctf/writeups.log</span>
+          </p>
           <div>
-            <h1>Vo Hoang Anh Quan</h1>
-            <div class="role">IT Student · Information Security</div>
+            <div class="log-line">
+              <span class="log-date">[2026-04-13]</span>
+              <span class="log-name">DawgCTF — writeup &amp; solutions</span>
+              <a class="log-link" href="/posts/dawgctf-writeup/">→ read</a>
+            </div>
+            <div class="log-line">
+              <span class="log-date">[2026-05-15]</span>
+              <span class="log-name">CyberGameCTF — writeup &amp; solutions</span>
+              <a class="log-link" href="/posts/cybergamectf-writeup/">→ read</a>
+            </div>
           </div>
-        </div>
-        <p class="intro">
-          Xin chào! Tôi là sinh viên ngành Công nghệ thông tin, chuyên ngành An toàn thông tin tại Trường Đại học Khoa
-          học Tự nhiên, ĐHQG-HCM (dự kiến tốt nghiệp 09/2026, GPA 3.38/4.0). Tôi có kinh nghiệm làm fullstack/backend
-          qua các dự án học thuật và cá nhân, đồng thời yêu thích tham gia các cuộc thi Capture The Flag (CTF) về bảo
-          mật.
-        </p>
-        <div class="actions">
-          <a
-            class="btn primary"
-            href="https://drive.google.com/file/d/1ASVkBvGulmKzNsyTEIHZio3MfYT4rlgu/view?usp=sharing"
-            target="_blank"
-            rel="noopener"
-            >Xem CV</a
-          >
-          <a class="btn" href="https://github.com/quanvo0112">GitHub</a>
-          <a class="btn" href="mailto:vohoanganhquan.work@gmail.com">Email</a>
-        </div>
-      </header>
+        </section>
 
-      <section id="projects">
-        <h2>Dự án nổi bật</h2>
-        <div class="grid">
-          <div class="project">
-            <h3>Flight Ticket Booking System</h3>
-            <p>
-              Backend Developer, dự án nhóm học thuật. Xây dựng chức năng backend cho hệ thống đặt vé máy bay mô phỏng:
-              tìm chuyến bay, đặt vé, xử lý thanh toán.
+        <section id="skills" class="out">
+          <p class="prompt">
+            <span class="u">quan</span><span class="h">@security</span><span class="p">:~$</span>
+            <span class="cmd">grep -r "skills" ./quan --include=*.stack</span>
+          </p>
+          <p class="grep-line">./quan/stack.txt: <span class="grep-match">10 matches</span></p>
+          <div class="skill-flags">
+            <span class="skill-flag"><span class="dd">--</span>python</span>
+            <span class="skill-flag"><span class="dd">--</span>java</span>
+            <span class="skill-flag"><span class="dd">--</span>cpp</span>
+            <span class="skill-flag"><span class="dd">--</span>javascript</span>
+            <span class="skill-flag"><span class="dd">--</span>react</span>
+            <span class="skill-flag"><span class="dd">--</span>spring</span>
+            <span class="skill-flag"><span class="dd">--</span>mysql</span>
+            <span class="skill-flag"><span class="dd">--</span>git</span>
+            <span class="skill-flag"><span class="dd">--</span>linux</span>
+            <span class="skill-flag"><span class="dd">--</span>docker</span>
+          </div>
+        </section>
+
+        <section id="education" class="out">
+          <p class="prompt">
+            <span class="u">quan</span><span class="h">@security</span><span class="p">:~$</span>
+            <span class="cmd">cat education.md</span>
+          </p>
+          <div class="edu-block">
+            <div class="edu-school">Trường Đại học Khoa học Tự nhiên, ĐHQG-HCM</div>
+            <div class="edu-meta">
+              Cử nhân Công nghệ thông tin · Chuyên ngành An toàn thông tin · GPA 3.38/4.0 · Dự kiến tốt nghiệp 09/2026
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" class="out">
+          <p class="prompt">
+            <span class="u">quan</span><span class="h">@security</span><span class="p">:~$</span>
+            <span class="cmd">ping quan.contact</span>
+          </p>
+          <div>
+            <p class="ping-line">
+              64 bytes from <a href="mailto:vohoanganhquan.work@gmail.com">vohoanganhquan.work@gmail.com</a>: icmp_seq=1
+              ttl=64 time=0.4ms
             </p>
-            <!-- TODO: xác nhận lại tech stack thật (CV ghi tạm) -->
-            <div class="stack">Java Spring Boot · MySQL</div>
-            <a href="https://github.com/quanvo0112/AirplaneTicketSeller">Xem trên GitHub →</a>
-          </div>
-          <div class="project">
-            <h3>Class Scheduler</h3>
-            <p>
-              Tester & Data Engineer, dự án cá nhân. Kiểm thử ứng dụng xếp lịch học viết bằng C với Raylib; crawl và xử
-              lý dữ liệu môn học/lịch học để nạp vào ứng dụng.
+            <p class="ping-line">
+              64 bytes from
+              <a href="https://github.com/quanvo0112" target="_blank" rel="noopener">github.com/quanvo0112</a>:
+              icmp_seq=2 ttl=64 time=0.6ms
             </p>
-            <div class="stack">C · Raylib</div>
-            <a href="https://github.com/quanvo0112/SchedulerRaylibHCMUS">Xem trên GitHub →</a>
-          </div>
-          <div class="project">
-            <h3>Cafe & Restaurant POS System</h3>
-            <p>
-              Fullstack Developer, dự án nhóm học thuật. Xây dựng hệ thống quản lý bán hàng (POS) cho quán cà phê/nhà
-              hàng: quản lý đơn hàng, tồn kho, hóa đơn.
+            <p class="ping-line">
+              64 bytes from
+              <a href="https://www.linkedin.com/in/vohoanganhquan2004/" target="_blank" rel="noopener"
+                >linkedin.com/in/vohoanganhquan2004</a
+              >: icmp_seq=3 ttl=64 time=0.5ms
             </p>
-            <!-- TODO: xác nhận lại tech stack thật -->
-            <div class="stack">C# · WinUI 3 · .NET</div>
-            <a href="https://github.com/quanvo0112/WP-Capybara-Vibe">Xem trên GitHub →</a>
-          </div>
-          <div class="project">
-            <h3>Drawing Application</h3>
-            <p>
-              Backend Developer & Tester, dự án nhóm học thuật. Phát triển logic backend và kiểm thử ứng dụng vẽ đa nền
-              tảng viết bằng Flutter/Dart.
+            <p class="ping-stat">
+              --- quan.contact ping statistics --- 3 packets transmitted, 3 received, 0% packet loss
             </p>
-            <div class="stack">Flutter · Dart</div>
-            <a href="https://github.com/quanvo0112/WP-Paint-App">Xem trên GitHub →</a>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
-      <section id="ctf">
-        <h2>Capture the flag (CTF)</h2>
-        <p style="font-size:14px; color:var(--fg); margin-bottom:14px;">
-          Tôi thường xuyên tham gia các giải CTF về an toàn thông tin và viết lại writeup trên blog.
-        </p>
-        <div class="grid">
-          <div class="project">
-            <h3>DawgCTF Writeup</h3>
-            <p>Phân tích và giải các thử thách bảo mật trong giải DawgCTF.</p>
-            <!-- TODO: kiểm tra lại đúng đường dẫn bài viết trên blog -->
-            <a href="/posts/dawgctf-writeup/">Đọc writeup →</a>
-          </div>
-          <div class="project">
-            <h3>CyberGameCTF Writeup</h3>
-            <p>Phân tích và giải các thử thách bảo mật trong giải CyberGameCTF.</p>
-            <a href="/posts/cybergamectf-writeup/">Đọc writeup →</a>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills">
-        <h2>Kỹ năng</h2>
-        <div class="skills">
-          <span class="skill">Python</span>
-          <span class="skill">Java</span>
-          <span class="skill">C++</span>
-          <span class="skill">JavaScript</span>
-          <span class="skill">React</span>
-          <span class="skill">Spring</span>
-          <span class="skill">MySQL</span>
-          <span class="skill">Git</span>
-          <span class="skill">Linux</span>
-          <span class="skill">Docker</span>
-        </div>
-        <p style="font-size:13px; color:var(--muted); margin-top:14px;">
-          Ngôn ngữ: Tiếng Việt (bản ngữ) · Tiếng Anh (IELTS 5.5 Academic)
-        </p>
-      </section>
-
-      <section id="education">
-        <h2>Học vấn</h2>
-        <div class="exp-item">
-          <h3>Trường Đại học Khoa học Tự nhiên, ĐHQG-HCM</h3>
-          <div class="meta">Dự kiến tốt nghiệp: 09/2026</div>
-          <p>Cử nhân Công nghệ thông tin, chuyên ngành An toàn thông tin. GPA: 3.38/4.0.</p>
-        </div>
-      </section>
-
-      <section id="contact">
-        <h2>Liên hệ</h2>
-        <p>
-          Email:
-          <a href="mailto:vohoanganhquan.work@gmail.com" style="color:var(--accent);text-decoration:none;"
-            >vohoanganhquan.work@gmail.com</a
-          >
-        </p>
-        <p>Điện thoại: 0767 147 226</p>
-        <p>
-          GitHub:
-          <a href="https://github.com/quanvo0112" style="color:var(--accent);text-decoration:none;"
-            >github.com/quanvo0112</a
-          >
-        </p>
-      </section>
+      <footer class="term-footer">
+        <span class="u" style="color:var(--green);">quan</span
+        ><span class="h" style="color:var(--text-faint);">@security</span
+        ><span class="p" style="color:var(--amber);">:~$</span> © {{ site.time | date: '%Y' }} · built with
+        <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>
+        <span class="cursor" aria-hidden="true"></span>
+      </footer>
     </div>
 
-    <footer>
-      © {{ site.time | date: '%Y' }} Vo Hoang Anh Quan · Built with <a href="https://jekyllrb.com/">Jekyll</a>
-    </footer>
+    <script>
+      (function () {
+        var el = document.getElementById('typed-cmd');
+        var text = 'whoami';
+        var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!el) return;
+        if (reduced) {
+          el.textContent = text;
+          return;
+        }
+        var i = 0;
+        function tick() {
+          el.textContent = text.slice(0, i);
+          i++;
+          if (i <= text.length) {
+            setTimeout(tick, 90);
+          }
+        }
+        tick();
+      })();
+    </script>
   </body>
 </html>
