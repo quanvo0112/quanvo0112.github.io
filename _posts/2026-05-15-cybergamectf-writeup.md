@@ -1988,7 +1988,7 @@ if "SK-CERT{" in r.text:
     
     # Cắt chuỗi để lấy ra chính xác flag từ HTML
     flag = r.text.split("SK-CERT{")[1].split("}")[0]
-    print(f"Flag: SK-CERT{{{flag}}}")
+    print(f"Flag: SK-CERT{% raw %}{{{flag}}}{% endraw %}")
 else:
     print("[-] Khai thác thất bại. Server trả về:")
     print(r.text)
@@ -2161,7 +2161,7 @@ r_admin = s.get(url_admin, headers=headers)
 if "SK-CERT{" in r_admin.text:
     print("\n[+] THÀNH CÔNG! Flag của bạn:")
     flag = r_admin.text.split("SK-CERT{")[1].split("}")[0]
-    print(f"SK-CERT{{{flag}}}")
+    print(f"SK-CERT{% raw %}{{{flag}}}{% endraw %}")
 else:
     print("[-] Lấy flag thất bại.")
 ```

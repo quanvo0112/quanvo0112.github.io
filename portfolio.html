@@ -28,28 +28,33 @@ permalink: /my-portfolio/
     <meta name="twitter:title" content="Vo Hoang Anh Quan — Portfolio">
     <meta name="twitter:description" content="IT Student · Information Security · aka K1llV">
     <meta name="twitter:image" content="https://quanvo0112.github.io/assets/portfolio/og-image.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
       rel="stylesheet"
     >
     <style>
       :root {
-        --bg: #0a0d12;
-        --bg-panel: #0f1319;
-        --bg-elevated: #141a23;
-        --bg-row-hover: #1a2028;
-        --border: #1f2530;
-        --border-bright: #2c3444;
-        --text: #e6e3dc;
-        --text-dim: #838d99;
-        --text-faint: #4b5363;
-        --amber: #ffb454;
-        --amber-dim: #cc8f43;
-        --green: #7ee081;
-        --green-dim: #4f9457;
-        --red: #e5534b;
+        --bg: #05070a;
+        --bg-panel: #080b10;
+        --bg-elevated: #0d1219;
+        --bg-input: #0a0e14;
+        --bg-row-hover: #111823;
+        --border: #152030;
+        --border-bright: #1e2d42;
+        --text: #c8d6e5;
+        --text-dim: #5f7189;
+        --text-faint: #3a4759;
+        --cyan: #22d3ee;
+        --cyan-dim: #0e7490;
+        --magenta: #f0abfc;
+        --magenta-bright: #e879f9;
+        --green: #4ade80;
+        --green-dim: #2f7d4f;
+        --red: #fb7185;
+        --yellow: #fde047;
         --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
         --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       }
@@ -71,7 +76,8 @@ permalink: /my-portfolio/
         font-family: var(--sans);
         line-height: 1.65;
         -webkit-font-smoothing: antialiased;
-        background-image: radial-gradient(ellipse 900px 500px at 50% -10%, rgba(255, 180, 84, 0.06), transparent 60%);
+        background-image: radial-gradient(ellipse 800px 500px at 15% -5%, rgba(34, 211, 238, 0.07), transparent 55%),
+          radial-gradient(ellipse 700px 500px at 90% 5%, rgba(232, 121, 249, 0.05), transparent 55%);
       }
       body::before {
         content: '';
@@ -81,19 +87,40 @@ permalink: /my-portfolio/
         z-index: 1;
         background: repeating-linear-gradient(
           180deg,
-          rgba(255, 255, 255, 0.012) 0px,
-          rgba(255, 255, 255, 0.012) 1px,
+          rgba(120, 200, 255, 0.015) 0px,
+          rgba(120, 200, 255, 0.015) 1px,
           transparent 1px,
           transparent 3px
         );
-        opacity: 0.5;
+        opacity: 0.6;
+      }
+      /* scanline quét dọc liên tục — hiệu ứng CRT động */
+      body::after {
+        content: '';
+        position: fixed;
+        left: 0;
+        right: 0;
+        height: 180px;
+        top: -180px;
+        pointer-events: none;
+        z-index: 1;
+        background: linear-gradient(180deg, transparent, rgba(34, 211, 238, 0.06) 60%, rgba(34, 211, 238, 0.1));
+        animation: scan 6s linear infinite;
+      }
+      @keyframes scan {
+        0% {
+          top: -180px;
+        }
+        100% {
+          top: 100%;
+        }
       }
       a {
-        color: var(--amber);
+        color: var(--cyan);
       }
       a:focus-visible,
       button:focus-visible {
-        outline: 2px solid var(--amber);
+        outline: 2px solid var(--cyan);
         outline-offset: 3px;
         border-radius: 2px;
       }
@@ -101,13 +128,26 @@ permalink: /my-portfolio/
       .terminal {
         position: relative;
         z-index: 2;
-        max-width: 920px;
+        max-width: 940px;
         margin: 32px auto 64px;
         border: 1px solid var(--border-bright);
         border-radius: 12px;
         overflow: hidden;
         background: var(--bg-panel);
-        box-shadow: 0 40px 100px -30px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.02);
+        box-shadow: 0 40px 120px -40px rgba(34, 211, 238, 0.15), 0 40px 100px -30px rgba(0, 0, 0, 0.8),
+          0 0 0 1px rgba(255, 255, 255, 0.02);
+        animation: termGlow 4s ease-in-out infinite;
+      }
+      @keyframes termGlow {
+        0%,
+        100% {
+          box-shadow: 0 40px 120px -40px rgba(34, 211, 238, 0.12), 0 40px 100px -30px rgba(0, 0, 0, 0.8),
+            0 0 0 1px rgba(255, 255, 255, 0.02);
+        }
+        50% {
+          box-shadow: 0 40px 120px -28px rgba(34, 211, 238, 0.3), 0 40px 100px -30px rgba(0, 0, 0, 0.8),
+            0 0 0 1px rgba(34, 211, 238, 0.1);
+        }
       }
       .titlebar {
         display: flex;
@@ -127,13 +167,23 @@ permalink: /my-portfolio/
         border-radius: 50%;
       }
       .tl-dot.r {
-        background: #e5534b;
+        background: #fb7185;
       }
       .tl-dot.y {
-        background: #f5b942;
+        background: #fde047;
       }
       .tl-dot.g {
-        background: #3fb950;
+        background: #4ade80;
+        animation: dotPulse 1.6s ease-in-out infinite;
+      }
+      @keyframes dotPulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.6);
+        }
+        50% {
+          box-shadow: 0 0 8px 2px rgba(74, 222, 128, 0.8);
+        }
       }
       .titlebar-label {
         margin: 0 auto;
@@ -167,12 +217,63 @@ permalink: /my-portfolio/
       }
       .tab:hover,
       .tab:focus-visible {
-        color: var(--amber);
-        border-bottom-color: var(--amber-dim);
+        color: var(--cyan);
+        border-bottom-color: var(--cyan-dim);
       }
 
       .session {
-        padding: 32px clamp(18px, 4vw, 44px) 48px;
+        padding: 28px clamp(18px, 4vw, 44px) 20px;
+      }
+
+      /* boot sequence — CSS thuần, không cần JS */
+      #boot {
+        font-family: var(--mono);
+        font-size: 13px;
+        margin: 0 0 24px;
+        padding: 14px 16px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--bg-elevated);
+      }
+      .boot-line {
+        color: var(--text);
+        line-height: 1.9;
+        letter-spacing: 0.01em;
+        opacity: 0;
+        animation: bootIn 0.35s ease forwards;
+      }
+      .boot-line:nth-child(1) {
+        animation-delay: 0.2s;
+      }
+      .boot-line:nth-child(2) {
+        animation-delay: 0.7s;
+      }
+      .boot-line:nth-child(3) {
+        animation-delay: 1.2s;
+      }
+      .boot-line:nth-child(4) {
+        animation-delay: 1.7s;
+      }
+      .boot-line .ok {
+        color: var(--green);
+        font-weight: 600;
+      }
+      .boot-line .warn {
+        color: var(--yellow);
+        font-weight: 600;
+      }
+      .boot-line .bl-txt {
+        color: var(--text-dim);
+      }
+      @keyframes bootIn {
+        from {
+          opacity: 0;
+          transform: translateX(-6px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
       }
 
       .prompt {
@@ -192,25 +293,39 @@ permalink: /my-portfolio/
         color: var(--text-faint);
       }
       .prompt .p {
-        color: var(--amber);
+        color: var(--cyan);
       }
       .prompt .cmd {
         color: var(--text);
       }
+
+      /* hero typing — CSS steps() animation */
+      .type-cmd {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        vertical-align: bottom;
+        width: 0ch;
+        animation: typeCmd 0.7s steps(6) forwards;
+        animation-delay: 2.2s;
+      }
+      @keyframes typeCmd {
+        from {
+          width: 0ch;
+        }
+        to {
+          width: 6ch;
+        }
+      }
+
       .cursor {
         display: inline-block;
         width: 8px;
         height: 15px;
-        background: var(--amber);
+        background: var(--cyan);
         margin-left: 2px;
         animation: blink 1s step-end infinite;
         vertical-align: text-bottom;
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .cursor {
-          animation: none;
-          opacity: 1;
-        }
       }
       @keyframes blink {
         50% {
@@ -218,14 +333,86 @@ permalink: /my-portfolio/
         }
       }
 
+      /* reveal — CSS thuần, mỗi section fade-in tuần tự sau boot */
       .out {
-        margin: 0 0 52px;
+        opacity: 0;
+        transform: translateY(16px);
+        animation: revealIn 0.6s ease forwards;
+        margin: 0 0 48px;
       }
-      .out:last-of-type {
-        margin-bottom: 0;
+      #about {
+        animation-delay: 2.2s;
+      }
+      #projects {
+        animation-delay: 2.5s;
+      }
+      #ctf {
+        animation-delay: 2.7s;
+      }
+      #skills {
+        animation-delay: 2.9s;
+      }
+      #education {
+        animation-delay: 3.1s;
+      }
+      #contact {
+        animation-delay: 3.3s;
+      }
+      @keyframes revealIn {
+        from {
+          opacity: 0;
+          transform: translateY(16px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
       }
 
-      /* Hero */
+      /* Khi reduce-motion: đảm bảo nội dung LUÔN hiển thị (không ẩn),
+         nhưng vẫn cho phép hiệu ứng nhẹ nhàng chạy để trang không chết cứng */
+      @media (prefers-reduced-motion: reduce) {
+        .boot-line,
+        .out {
+          opacity: 1;
+        }
+        .type-cmd {
+          width: 6ch;
+        }
+      }
+
+      /* hiệu ứng reveal khi cuộn tới (thêm bởi JS) */
+      .ls-table tbody tr,
+      .log-line,
+      .skill-flag {
+        transition: transform 0.4s ease, opacity 0.4s ease, background 0.15s, border-color 0.15s, color 0.15s;
+      }
+      .ls-table tbody tr.in-view,
+      .log-line.in-view,
+      .skill-flag.in-view {
+        animation: popIn 0.5s ease backwards;
+      }
+      @keyframes popIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px) scale(0.98);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      /* hover mạnh hơn trên dòng project */
+      .ls-table tbody tr:hover {
+        transform: translateX(4px);
+      }
+      .skill-flag:hover {
+        transform: translateY(-2px) scale(1.05);
+      }
+      .out:last-of-type {
+        margin-bottom: 24px;
+      }
+
       .hero-name {
         font-family: var(--mono);
         font-weight: 700;
@@ -234,8 +421,11 @@ permalink: /my-portfolio/
         margin: 0 0 6px;
         letter-spacing: -0.01em;
       }
+      .hero-name .accent {
+        color: var(--cyan);
+      }
       .hero-role {
-        color: var(--amber);
+        color: var(--magenta);
         font-family: var(--mono);
         font-size: 14px;
         margin: 0 0 18px;
@@ -260,28 +450,28 @@ permalink: /my-portfolio/
         color: var(--text);
         text-decoration: none;
         background: var(--bg-elevated);
-        transition: border-color 0.15s, color 0.15s, transform 0.1s;
+        transition: border-color 0.15s, color 0.15s, transform 0.1s, box-shadow 0.15s;
         display: inline-flex;
         align-items: center;
         gap: 6px;
       }
       .flag:hover {
-        border-color: var(--amber);
-        color: var(--amber);
+        border-color: var(--cyan);
+        color: var(--cyan);
         transform: translateY(-1px);
+        box-shadow: 0 4px 20px -6px rgba(34, 211, 238, 0.4);
       }
       .flag.primary {
-        background: var(--amber);
-        color: #1a1305;
-        border-color: var(--amber);
+        background: var(--cyan);
+        color: #04141a;
+        border-color: var(--cyan);
         font-weight: 600;
       }
       .flag.primary:hover {
-        color: #1a1305;
-        opacity: 0.9;
+        color: #04141a;
+        box-shadow: 0 4px 24px -4px rgba(34, 211, 238, 0.6);
       }
 
-      /* ls -la projects table */
       .ls-table {
         width: 100%;
         border-collapse: collapse;
@@ -313,7 +503,7 @@ permalink: /my-portfolio/
       .ls-table tr:last-child td {
         border-bottom: none;
       }
-      .ls-table tr {
+      .ls-table tbody tr {
         transition: background 0.15s;
       }
       .ls-table tbody tr:hover {
@@ -328,7 +518,7 @@ permalink: /my-portfolio/
       .proj-name {
         font-family: var(--mono);
         font-weight: 600;
-        color: var(--text);
+        color: var(--cyan);
         font-size: 14.5px;
       }
       .proj-role {
@@ -340,7 +530,7 @@ permalink: /my-portfolio/
         color: var(--text);
         font-size: 13.5px;
         margin-top: 6px;
-        max-width: 44ch;
+        max-width: 46ch;
       }
       .proj-tags {
         display: flex;
@@ -351,7 +541,7 @@ permalink: /my-portfolio/
       .tag {
         font-family: var(--mono);
         font-size: 11px;
-        color: var(--amber-dim);
+        color: var(--magenta);
         border: 1px solid var(--border-bright);
         padding: 2px 7px;
         border-radius: 4px;
@@ -359,7 +549,7 @@ permalink: /my-portfolio/
       .proj-link {
         font-family: var(--mono);
         font-size: 12.5px;
-        color: var(--amber);
+        color: var(--cyan);
         text-decoration: none;
         white-space: nowrap;
       }
@@ -367,7 +557,6 @@ permalink: /my-portfolio/
         text-decoration: underline;
       }
 
-      /* CTF log */
       .log-line {
         display: flex;
         gap: 14px;
@@ -396,7 +585,6 @@ permalink: /my-portfolio/
         text-decoration: underline;
       }
 
-      /* skills grep */
       .grep-line {
         font-family: var(--mono);
         font-size: 13.5px;
@@ -404,7 +592,7 @@ permalink: /my-portfolio/
         margin-bottom: 14px;
       }
       .grep-match {
-        color: var(--amber);
+        color: var(--cyan);
       }
       .skill-flags {
         display: flex;
@@ -419,19 +607,23 @@ permalink: /my-portfolio/
         border: 1px solid var(--border-bright);
         padding: 5px 11px;
         border-radius: 5px;
+        transition: border-color 0.15s, color 0.15s;
+      }
+      .skill-flag:hover {
+        border-color: var(--magenta);
+        color: var(--magenta);
       }
       .skill-flag .dd {
         color: var(--text-faint);
       }
 
-      /* education */
       .edu-block {
         font-size: 14.5px;
       }
       .edu-school {
         font-family: var(--mono);
         font-weight: 600;
-        color: var(--text);
+        color: var(--cyan);
         font-size: 15.5px;
       }
       .edu-meta {
@@ -440,7 +632,6 @@ permalink: /my-portfolio/
         margin: 4px 0 8px;
       }
 
-      /* ping contact */
       .ping-line {
         font-family: var(--mono);
         font-size: 13px;
@@ -458,6 +649,88 @@ permalink: /my-portfolio/
         color: var(--text-faint);
         font-size: 12px;
         margin-top: 10px;
+      }
+
+      /* interactive input line */
+      .cli {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        font-family: var(--mono);
+        font-size: 14px;
+        padding: 16px clamp(18px, 4vw, 44px);
+        border-top: 1px solid var(--border);
+        background: var(--bg-input);
+        cursor: text;
+      }
+      .cli .u {
+        color: var(--green);
+      }
+      .cli .h {
+        color: var(--text-faint);
+      }
+      .cli .p {
+        color: var(--cyan);
+      }
+      #cli-input {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: var(--text);
+        font-family: var(--mono);
+        font-size: 14px;
+        caret-color: var(--cyan);
+        padding: 0;
+      }
+      #cli-output {
+        font-family: var(--mono);
+        font-size: 13.5px;
+        padding: 0 clamp(18px, 4vw, 44px);
+      }
+      .cli-echo {
+        color: var(--text-dim);
+        padding: 10px 0 2px;
+      }
+      .cli-echo .p {
+        color: var(--cyan);
+      }
+      .cli-echo .u {
+        color: var(--green);
+      }
+      .cli-echo .h {
+        color: var(--text-faint);
+      }
+      .cli-response {
+        color: var(--text);
+        padding: 2px 0 12px;
+        white-space: pre-wrap;
+        line-height: 1.7;
+      }
+      .cli-response .hl {
+        color: var(--cyan);
+      }
+      .cli-response .mg {
+        color: var(--magenta);
+      }
+      .cli-response .gr {
+        color: var(--green);
+      }
+      .cli-response .er {
+        color: var(--red);
+      }
+      .cli-response .dim {
+        color: var(--text-dim);
+      }
+      .cli-hint {
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--text-faint);
+        padding: 8px clamp(18px, 4vw, 44px) 0;
+      }
+      .cli-hint b {
+        color: var(--cyan);
+        font-weight: 500;
       }
 
       footer.term-footer {
@@ -520,12 +793,27 @@ permalink: /my-portfolio/
       </nav>
 
       <main class="session">
+        <div id="boot" aria-hidden="true">
+          <div class="boot-line">
+            <span class="ok">[ OK ]</span> <span class="bl-txt">Initializing portfolio shell v2.1.0 ...</span>
+          </div>
+          <div class="boot-line">
+            <span class="ok">[ OK ]</span> <span class="bl-txt">Loading modules: projects, ctf, skills ...</span>
+          </div>
+          <div class="boot-line">
+            <span class="ok">[ OK ]</span> <span class="bl-txt">Establishing secure connection ...</span>
+          </div>
+          <div class="boot-line">
+            <span class="warn">[WARN]</span> <span class="bl-txt">Auth: guest access granted</span>
+          </div>
+        </div>
+
         <section id="about" class="out">
           <p class="prompt">
             <span class="u">quan</span><span class="h">@security</span><span class="p">:~$</span>
-            <span class="cmd" id="typed-cmd"></span><span class="cursor" aria-hidden="true"></span>
+            <span class="cmd type-cmd">whoami</span><span class="cursor" id="hero-cursor" aria-hidden="true"></span>
           </p>
-          <h1 class="hero-name">Võ Hoàng Anh Quân</h1>
+          <h1 class="hero-name">Vo Hoang Anh <span class="accent">Quan</span></h1>
           <p class="hero-role">IT Student · Information Security · aka K1llV</p>
           <p class="hero-intro">
             Sinh viên Công nghệ thông tin, chuyên ngành An toàn thông tin tại Trường Đại học Khoa học Tự nhiên,
@@ -541,6 +829,9 @@ permalink: /my-portfolio/
               >--resume</a
             >
             <a class="flag" href="https://github.com/quanvo0112" target="_blank" rel="noopener">--github</a>
+            <a class="flag" href="https://www.linkedin.com/in/vohoanganhquan2004/" target="_blank" rel="noopener"
+              >--linkedin</a
+            >
             <a class="flag" href="mailto:vohoanganhquan.work@gmail.com">--mail</a>
           </div>
         </section>
@@ -746,10 +1037,24 @@ permalink: /my-portfolio/
         </section>
       </main>
 
+      <p class="cli-hint">💡 Đây là terminal thật — gõ <b>help</b> rồi Enter để xem các lệnh có thể chạy.</p>
+      <div id="cli-output"></div>
+      <div class="cli" id="cli-wrap">
+        <span class="u">quan</span><span class="h">@security</span><span class="p">:~$</span>
+        <input
+          id="cli-input"
+          type="text"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+          aria-label="Nhập lệnh terminal"
+        >
+      </div>
+
       <footer class="term-footer">
         <span class="u" style="color:var(--green);">quan</span
         ><span class="h" style="color:var(--text-faint);">@security</span
-        ><span class="p" style="color:var(--amber);">:~$</span> © {{ site.time | date: '%Y' }} · built with
+        ><span class="p" style="color:var(--cyan);">:~$</span> © {{ site.time | date: '%Y' }} · built with
         <a href="https://jekyllrb.com/" target="_blank" rel="noopener">Jekyll</a>
         <span class="cursor" aria-hidden="true"></span>
       </footer>
@@ -757,23 +1062,210 @@ permalink: /my-portfolio/
 
     <script>
       (function () {
-        var el = document.getElementById('typed-cmd');
-        var text = 'whoami';
         var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (!el) return;
-        if (reduced) {
-          el.textContent = text;
-          return;
+
+        /* ---------- reveal-on-scroll bổ sung: thêm hiệu ứng khi cuộn tới mỗi phần ---------- */
+        try {
+          var revealEls = document.querySelectorAll('.out, .ls-table tbody tr, .log-line, .skill-flag');
+          if ('IntersectionObserver' in window) {
+            var io = new IntersectionObserver(
+              function (entries) {
+                entries.forEach(function (e) {
+                  if (e.isIntersecting) {
+                    e.target.classList.add('in-view');
+                    io.unobserve(e.target);
+                  }
+                });
+              },
+              { threshold: 0.15 }
+            );
+            revealEls.forEach(function (el) {
+              io.observe(el);
+            });
+          } else {
+            revealEls.forEach(function (el) {
+              el.classList.add('in-view');
+            });
+          }
+        } catch (err) {
+          document.querySelectorAll('.out').forEach(function (el) {
+            el.style.opacity = '1';
+          });
         }
-        var i = 0;
-        function tick() {
-          el.textContent = text.slice(0, i);
-          i++;
-          if (i <= text.length) {
-            setTimeout(tick, 90);
+
+        /* ---------- interactive CLI ---------- */
+        var input = document.getElementById('cli-input');
+        var output = document.getElementById('cli-output');
+        var wrap = document.getElementById('cli-wrap');
+        var history = [];
+        var histIdx = -1;
+
+        function esc(s) {
+          return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        }
+
+        var commands = {
+          help: function () {
+            return (
+              'Các lệnh khả dụng:\n' +
+              '  <span class="hl">whoami</span>      thông tin về mình\n' +
+              '  <span class="hl">ls</span>          liệt kê dự án\n' +
+              '  <span class="hl">cat ctf</span>     các bài CTF writeup\n' +
+              '  <span class="hl">skills</span>      kỹ năng kỹ thuật\n' +
+              '  <span class="hl">edu</span>         học vấn\n' +
+              '  <span class="hl">contact</span>     thông tin liên hệ\n' +
+              '  <span class="hl">resume</span>      mở CV (Google Drive)\n' +
+              '  <span class="hl">clear</span>       xoá màn hình\n' +
+              '  <span class="dim"># thử tìm vài lệnh ẩn nữa xem ;)</span>'
+            );
+          },
+          whoami: function () {
+            return (
+              '<span class="hl">Võ Hoàng Anh Quân</span> (aka <span class="mg">K1llV</span>)\n' +
+              'Sinh viên An toàn thông tin @ HCMUS · GPA 3.38/4.0\n' +
+              'Đam mê: cybersecurity, CTF, software development.'
+            );
+          },
+          ls: function () {
+            return (
+              '<span class="hl">flight-ticket-booking/</span>   React · Node · MongoDB\n' +
+              '<span class="hl">class-scheduler/</span>         C · Raylib · Chrome-ext\n' +
+              '<span class="hl">pos-system/</span>              C# · WinUI3 · PostgreSQL\n' +
+              '<span class="hl">drawing-app/</span>             Flutter · Dart\n' +
+              '<span class="dim"># cuộn lên phần ~/projects để xem chi tiết + link</span>'
+            );
+          },
+          skills: function () {
+            return (
+              '<span class="mg">languages</span>  python java cpp javascript\n' +
+              '<span class="mg">web</span>        react spring node\n' +
+              '<span class="mg">data/ops</span>   mysql postgresql git linux docker'
+            );
+          },
+          edu: function () {
+            return (
+              'Trường ĐH Khoa học Tự nhiên, ĐHQG-HCM\n' +
+              'Cử nhân CNTT · An toàn thông tin · GPA 3.38/4.0\n' +
+              'Dự kiến tốt nghiệp: 09/2026'
+            );
+          },
+          contact: function () {
+            return (
+              'email     <span class="gr">vohoanganhquan.work@gmail.com</span>\n' +
+              'github    <span class="gr">github.com/quanvo0112</span>\n' +
+              'linkedin  <span class="gr">linkedin.com/in/vohoanganhquan2004</span>'
+            );
+          },
+          sudo: function () {
+            return (
+              '<span class="er">[sudo] password for guest:</span>\n' + 'Nice try — nhưng bạn không có quyền root ở đây.'
+            );
+          },
+          hack: function () {
+            return (
+              '<span class="gr">Accessing mainframe...</span> just kidding.\n' +
+              'Bảo mật thật sự bắt đầu từ việc <span class="hl">không</span> tin vào những gì trông giống "hack" trên phim 🙂'
+            );
+          },
+          exit: function () {
+            return 'Không thoát được đâu — đây là portfolio, không phải shell thật ;)';
+          },
+          pwd: function () {
+            return '/home/quan/portfolio';
+          },
+          date: function () {
+            return new Date().toString();
+          },
+        };
+        commands['cat'] = function (arg) {
+          if (arg === 'ctf') {
+            return (
+              '[2026-04-13] DawgCTF writeup      → <a href="/posts/dawgctf-writeup/">/posts/dawgctf-writeup/</a>\n' +
+              '[2026-05-15] CyberGameCTF writeup  → <a href="/posts/cybergamectf-writeup/">/posts/cybergamectf-writeup/</a>'
+            );
+          }
+          if (!arg) return '<span class="er">cat: thiếu tên file</span> — thử: cat ctf';
+          return '<span class="er">cat: ' + esc(arg) + ': No such file or directory</span>';
+        };
+        commands['resume'] = function () {
+          window.open(
+            'https://drive.google.com/file/d/1JUjLBTuLojjUO-ARRKSqZgQGu1RHz_Po/view?usp=sharing',
+            '_blank',
+            'noopener'
+          );
+          return 'Đang mở CV trong tab mới... <span class="dim">(nếu bị chặn popup, xem nút --resume ở trên)</span>';
+        };
+
+        function print(cmdText, responseHTML) {
+          var echo = document.createElement('div');
+          echo.className = 'cli-echo';
+          echo.innerHTML =
+            '<span class="u">quan</span><span class="h">@security</span><span class="p">:~$</span> ' + esc(cmdText);
+          output.appendChild(echo);
+          if (responseHTML) {
+            var resp = document.createElement('div');
+            resp.className = 'cli-response';
+            resp.innerHTML = responseHTML;
+            output.appendChild(resp);
           }
         }
-        tick();
+
+        function handle(raw) {
+          var text = raw.trim();
+          if (!text) return;
+          history.push(text);
+          histIdx = history.length;
+          if (text === 'clear') {
+            output.innerHTML = '';
+            return;
+          }
+          var parts = text.split(/\s+/);
+          var cmd = parts[0].toLowerCase();
+          var arg = parts.slice(1).join(' ');
+          // support "ls projects", "ls -la" etc → treat as ls
+          if (cmd === 'ls') {
+            print(text, commands.ls());
+            return;
+          }
+          if (commands[cmd]) {
+            print(text, commands[cmd](arg));
+            return;
+          }
+          print(
+            text,
+            '<span class="er">command not found: ' +
+              esc(cmd) +
+              '</span> — gõ <span class="hl">help</span> để xem lệnh khả dụng.'
+          );
+        }
+
+        if (input) {
+          wrap.addEventListener('click', function () {
+            input.focus();
+          });
+          input.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter') {
+              handle(input.value);
+              input.value = '';
+              wrap.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'nearest' });
+            } else if (e.key === 'ArrowUp') {
+              if (histIdx > 0) {
+                histIdx--;
+                input.value = history[histIdx];
+                e.preventDefault();
+              }
+            } else if (e.key === 'ArrowDown') {
+              if (histIdx < history.length - 1) {
+                histIdx++;
+                input.value = history[histIdx];
+              } else {
+                histIdx = history.length;
+                input.value = '';
+              }
+              e.preventDefault();
+            }
+          });
+        }
       })();
     </script>
   </body>

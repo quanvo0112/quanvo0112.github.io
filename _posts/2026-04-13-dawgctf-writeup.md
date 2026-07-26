@@ -312,7 +312,7 @@ with open("iata_wordlist.txt", "w") as f:
     chars = string.ascii_uppercase
     for combo in itertools.product(chars, repeat=3):
         iata = "".join(combo)
-        f.write(f"DawgCTF{{{iata}}}\n")
+        f.write(f"DawgCTF{% raw %}{{{iata}}}{% endraw %}\n")
 
 print("Đã tạo xong wordlist iata_wordlist.txt")
 ```
