@@ -8,4 +8,4 @@ order: 4
 
 {: .prompt-tip }
 
-For my full resume, projects, and skills, check out my [portfolio](/my-portfolio).
+For my full resume, projects, and skills, check out my [portfolio](https://quanvo0112.github.io/my-portfolio/).
