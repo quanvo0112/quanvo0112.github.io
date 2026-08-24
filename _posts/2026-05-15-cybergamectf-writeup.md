@@ -2,7 +2,7 @@
 title: CyberGame 2026
 date: 2026-05-20 09:00:00 +0700
 categories: [Security, CTF]
-tags: [writeup, steganography]
+tags: [writeup, cryptography, forensics, osint, web, steganography, cve]
 math: true
 image:
   path: /assets/img/Cybergame2026/logo.png

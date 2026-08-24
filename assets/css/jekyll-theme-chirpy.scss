@@ -386,3 +386,9 @@ body[data-mode='light'] {
     }
   }
 }
+
+/* === Tắt nền đỏ báo lỗi cho thẻ HTTP === */
+.language-http .highlight .err {
+  color: inherit !important;
+  background-color: transparent !important;
+}

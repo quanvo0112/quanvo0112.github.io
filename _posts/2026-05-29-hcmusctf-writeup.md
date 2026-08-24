@@ -2,7 +2,7 @@
 title: HCMUS-CTF 2026 Qualification
 date: 2026-06-15 09:00:00 +0700
 categories: [Security, CTF]
-tags: [writeup, steganography]
+tags: [writeup, reverse-engineering, web]
 math: true
 image:
   path: /assets/img/HCMUSCTF2026/logo.png
