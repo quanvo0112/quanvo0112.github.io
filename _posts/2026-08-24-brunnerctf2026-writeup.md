@@ -1017,12 +1017,6 @@ for t, row in enumerate(sig):
 Image.fromarray(canvas).resize((157 * 8, 256 * 2)).save("alternative_channel_decoded.png")
 ```
 
-After rendering `alternative_channel_decoded.png`, the text becomes clearly visible:
-
-```text
-1_l1k3_sstv
-```
-
 ![](/assets/img/BrunnerCTF2026/alternative_channel_decoded.png)
 
 The challenge asks for only the inner flag content, then you must wrap it in `brunner{}`. So the final flag is:
