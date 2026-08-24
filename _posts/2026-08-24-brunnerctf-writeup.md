@@ -1,6 +1,6 @@
 ---
 title: BrunnerCTF 2026 - Global
-date: 2026-08-23 09:00:00 +0700
+date: 2026-08-24 09:00:00 +0700
 categories: [Security, CTF]
 tags: [writeup, forensics, osint, mobile, misc, android, reverse-engineering, web, ml, steganography, ai, git, math]
 image:
