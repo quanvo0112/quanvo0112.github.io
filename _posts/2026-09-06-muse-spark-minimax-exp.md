@@ -1,7 +1,7 @@
 ---
 title: Muse Spark 1.3 & Minimax M2.7 - M3
 date: 2026-09-06 09:00:00 +0700
-categories: [Technology, AIModels]
+categories: [Personal, Technology]
 tags: [ai, ml]
 image:
   path: /assets/img/MuseSparkvsMinimax/logo.png
